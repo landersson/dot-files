@@ -390,8 +390,8 @@ else
         hi Special      guifg=#87d787
         hi Statement    guifg=#87d7ff
         hi Title        guifg=#5fafd7
-        hi Type         guifg=#8090ff
-        "hi Type         guifg=#87d7d7
+        "hi Type         guifg=#8090ff
+        hi Type         guifg=#87d7d7
         hi String       guifg=#80af80
         hi Function     guifg=#b0f0e0
 

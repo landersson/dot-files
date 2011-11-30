@@ -15,6 +15,7 @@ Plugin 'dag/vim2hs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
 "Plugin 'bling/vim-airline'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -103,8 +104,8 @@ nmap <leader>e :e<space>
 nmap <leader>v :vsp<space>
 nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>s :%s/
-nmap <leader>x :x<cr>
-nmap <leader>q :bd<cr>
+nmap <leader>X :x<cr>
+nmap <leader>q :bp\|bd #<cr>
 nmap <leader>b :buffers<cr>:b<space>
 nmap <leader>n :NERDTree<cr>
 " Pressing ,ss will toggle and untoggle spell checking
@@ -123,6 +124,10 @@ function! RepeatChar(char, count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " vim-slime
 let g:slime_target = "timux"
