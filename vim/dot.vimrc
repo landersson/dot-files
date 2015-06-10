@@ -2,7 +2,7 @@
 " Description: Optimized for C/C++ development, but useful also for other things.
 " Author: Gerhard Gappmeier
 "
-execute pathogen#infect()
+"execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -26,7 +26,11 @@ set textwidth=120
 set t_Co=256
 syntax on
 set bg=dark
-colorscheme Tomorrow-Night
+"let g:zenburn_high_Contrast = 1
+"colorscheme zenburn
+let g:lucius_contrast_bg = 'high'
+
+colorscheme lucius
 "hi StatusLine guifg=grey50
 "hi StatusLineNC guibg=grey30
 
