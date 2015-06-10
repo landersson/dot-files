@@ -15,9 +15,14 @@ export EDITOR=vim
 shopt -s checkwinsize
 
 # enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
+if [[ "$TERM" != "dumb" ]]; then
+    if [[ `uname` == "Darwin" ]]; then
+        alias ls="ls -p -G" 
+        export LS_COLORS='ex=01;37'
+    else      
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto'
+    fi
 fi
 
 # some more ls aliases
@@ -63,3 +68,7 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+if [[ `uname` == Darwin ]]; then 
+    source /opt/local//share/git/contrib/completion/git-completion.bash
+    export PS1="\W:>"
+fi

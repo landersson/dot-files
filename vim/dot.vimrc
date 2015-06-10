@@ -18,21 +18,22 @@ set autoindent
 set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
+set sw=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 " wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
 set textwidth=120
+
 " turn syntax highlighting on
 set t_Co=256
 syntax on
 set bg=dark
 "let g:zenburn_high_Contrast = 1
 "colorscheme zenburn
-let g:lucius_contrast_bg = 'high'
-
+if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+    let g:lucius_contrast_bg = 'high'
+endif
 colorscheme lucius
-"hi StatusLine guifg=grey50
-"hi StatusLineNC guibg=grey30
 
 " turn line numbers on
 set number
