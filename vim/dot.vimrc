@@ -48,5 +48,5 @@ set guioptions-=L
 set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
-autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 autoindent smartindent
+"autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 autoindent smartindent
 
