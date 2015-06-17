@@ -1,9 +1,11 @@
 " VIM Configuration File
-"
-"execute pathogen#infect()
-syntax on
-filetype plugin indent on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
+call vundle#begin()
+call vundle#end()
 
+filetype plugin indent on
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -23,6 +25,7 @@ set expandtab        " expand tabs to spaces
 set textwidth=120
 
 " turn syntax highlighting on
+syntax on
 set t_Co=256
 set bg=dark
 "let g:zenburn_high_Contrast = 1
@@ -43,3 +46,7 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set pastetoggle=<f5>
+" Automatically cd into the directory that the file is in
+autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 autoindent smartindent
+
