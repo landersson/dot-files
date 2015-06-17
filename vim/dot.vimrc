@@ -3,6 +3,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 filetype plugin indent on
@@ -41,6 +42,8 @@ set number
 set showmatch
 " intelligent comments
 "set comments=sl:/*,mb:\ *,elx:\ */
+"incremental searching
+set incsearch 
 
 set guioptions-=T
 set guioptions-=r
