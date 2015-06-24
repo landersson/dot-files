@@ -6,8 +6,24 @@
 # If not running interactively, don't do anything:
 #[ -z "$PS1" ] && return
 
+# Eternal bash history.
+# ---------------------
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+#export HISTTIMEFORMAT="[%F %T] kaka"
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
+
+
 export EDITOR=vim
 
 # check the window size after each command and, if necessary,
@@ -31,6 +47,10 @@ alias cvstat="cvs status | grep Status:"
 alias la='ls -A'
 alias l="less"
 alias ssh="ssh -X"
+
+# puppet aliases
+alias pag='puppet agent'
+alias ppv='puppet parser validate'
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then

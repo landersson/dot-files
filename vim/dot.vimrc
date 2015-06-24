@@ -4,6 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()
 
 filetype plugin indent on
@@ -51,5 +52,8 @@ set guioptions-=L
 set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
-"autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 autoindent smartindent
 
+"remap jj to escape in insert mode
+inoremap jj <Esc>
+let mapleader=","
+nmap <leader>w :w!<cr>
