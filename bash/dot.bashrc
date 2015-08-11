@@ -52,6 +52,14 @@ alias ssh="ssh -X"
 alias pag='puppet agent'
 alias ppv='puppet parser validate'
 
+# git aliases
+alias gst='git status'
+alias gco='git commit'
+alias gad='git add'
+alias glg='git log'
+alias gps='git push'
+alias gpu='git pull'
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
