@@ -1,0 +1,83 @@
+
+# Modes
+jj - command mode
+
+# Movement
+h - left
+j - down
+k - up
+l - right
+w - start of next word
+b - start of prev word
+% - move to matching parenthesis
+fx - goto next char 'x', F same backwards
+tx - goto before next char 'x', same backwards
+* - goto next occurence of word under cursor
+) - jump forward one sentence
+( - jump backward one sentence
+} - jump forward one paragraph
+{ - jump backward one paragraph
+'' - jump to previous line
+ctrl-o - jump back in location history
+ctrl-i - jump forward in location history
+
+# Help
+ctrl-] - follow help link
+ctrl-t - go back
+
+# Insert
+i - insert mode at current char
+I - insert mode at beggining of line
+a - append after the cursor
+A - append at the end of the line
+
+# Delete
+
+x - delete char under cursor
+X - backspace
+
+# Undo
+u - undo
+ctrl-r - redo
+
+# Indentation
+>> - Indent
+<< - Unindent
+ctrl-t - indent in insert mode
+ctrl-d - unindent in insert mode
+ctrl-w - backward delete word
+ctrl-u - backward delete line
+
+= - autoindent selection
+== - autoindent current line
+:gg=G - autoindent entire buffer
+
+# Buffers
+
+<leader> w - save buffer
+<leader> b - list buffers and switch
+<leader> q - close buffer
+:ls - list buffers
+
+## Window Management
+
+ctrl-w c - close window
+ctrl-w q - quit window
+ctrl-w hjkl - move window left/bottom/top/right
+ctrl-w v - split vertically
+ctrl-w v - split horizontally
+
+# Copy/Paste
+
+yy - yank line
+Y - yank line
+v - visual mark
+V - linewise visual mark
+]p - paste and indent
+
+# NERDCommenter: http://www.vim.org/scripts/script.php?script_id=1218
+<leader>-cc - comment mark
+<leader>-cs - comment selection sexily
+<leader>-c<space> - toggle comment state
+
+

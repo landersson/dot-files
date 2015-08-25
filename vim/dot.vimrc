@@ -5,12 +5,21 @@ filetype off
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'jpalardy/vim-slime'
+Plugin 'tpope/vim-unimpaired'
 call vundle#end()
 
 filetype plugin indent on
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
+
+" automatically reread externally changed files (not modified in vim)
+set autoread
+set hidden
+
+" longer command history
+set history=1000
 set termencoding=utf-8
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
@@ -30,8 +39,8 @@ set textwidth=120
 syntax on
 set t_Co=256
 set bg=dark
-"let g:zenburn_high_Contrast = 1
-"colorscheme zenburn
+
+"colorscheme lucius
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
     let g:lucius_contrast_bg = 'high'
 endif
@@ -46,20 +55,34 @@ set showmatch
 "incremental searching
 set incsearch 
 
+if v:version > 703 
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+" no toolbar
 set guioptions-=T
+" no righthand scroll bar
 set guioptions-=r
+" no left hand scroll bar
 set guioptions-=L
 set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
+let NERDTreeQuitOnOpen=1
 "remap jj to escape in insert mode
 inoremap jj <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
+nmap <leader>q :bd<cr>
+nmap <leader>b :buffers<cr>:b
 nmap <leader>n :NERDTree<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 nmap <S-Enter> i<cr><Esc> 
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
