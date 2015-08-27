@@ -436,14 +436,14 @@ else
         hi Search                       guibg=#d78700
         hi Todo         guifg=#afaf00   guibg=#5f5f00
     elseif s:contrast == "high"
-        hi Cursor                       guibg=#afd7ff
+        hi Cursor                       guibg=#ff0000
         hi CursorIM                     guibg=#afd7ff
         hi Error        guifg=#ffafaf   guibg=#af0000
         hi IncSearch                    guibg=#87ffff
         hi Search                       guibg=#ffaf5f
         hi Todo         guifg=#ffff87   guibg=#87875f
     else
-        hi Cursor                       guibg=#87afd7
+        hi Cursor                       guibg=#ff0000
         hi CursorIM                     guibg=#87afd7
         hi Error        guifg=#ff8787   guibg=#870000
         hi IncSearch                    guibg=#5fd7d7
