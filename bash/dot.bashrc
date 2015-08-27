@@ -72,3 +72,7 @@ if [[ `uname` == Darwin ]]; then
     source /opt/local//share/git/contrib/completion/git-completion.bash
     export PS1="\W:>"
 fi
+
+export PATH=$PATH:/usr/local/cuda-7.0/bin/
+export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64
+. /home/users/laan/torch/install/bin/torch-activate
