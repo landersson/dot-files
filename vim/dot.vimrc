@@ -74,6 +74,7 @@ let NERDTreeQuitOnOpen=1
 inoremap jj <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
+nmap <leader>x :x<cr>
 nmap <leader>q :bd<cr>
 nmap <leader>b :buffers<cr>:b
 nmap <leader>n :NERDTree<cr>
