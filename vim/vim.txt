@@ -24,6 +24,7 @@ ctrl-i - jump forward in location history
 # Help
 ctrl-] - follow help link
 ctrl-t - go back
+1 + ctrl-g - how current filename path
 
 # Insert
 i - insert mode at current char

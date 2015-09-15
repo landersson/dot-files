@@ -7,6 +7,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'danro/rename.vim'
 call vundle#end()
 
 filetype plugin indent on
