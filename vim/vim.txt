@@ -54,9 +54,11 @@ ctrl-u - backward delete line
 
 # Buffers
 
+<leader> e - load buffer
 <leader> w - save buffer
 <leader> b - list buffers and switch
 <leader> q - close buffer
+ctrl-^ - switch to previous buffer
 :ls - list buffers
 
 ## Window Management

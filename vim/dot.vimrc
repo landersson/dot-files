@@ -59,8 +59,9 @@ if v:version > 703
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
-" no toolbar
+" no toolbar, no menu
 set guioptions-=T
+set guioptions-=m
 " no righthand scroll bar
 set guioptions-=r
 " no left hand scroll bar
@@ -74,8 +75,9 @@ let NERDTreeQuitOnOpen=1
 inoremap jj <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
+nmap <leader>e :e<space>
 nmap <leader>q :bd<cr>
-nmap <leader>b :buffers<cr>:b
+nmap <leader>b :buffers<cr>:b<space>
 nmap <leader>n :NERDTree<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
