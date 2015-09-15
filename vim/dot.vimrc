@@ -7,6 +7,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'danro/rename.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -76,6 +77,7 @@ inoremap jj <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
 nmap <leader>e :e<space>
+nmap <leader>x :x<cr>
 nmap <leader>q :bd<cr>
 nmap <leader>b :buffers<cr>:b<space>
 nmap <leader>n :NERDTree<cr>
