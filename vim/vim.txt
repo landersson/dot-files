@@ -12,6 +12,7 @@ b - start of prev word
 % - move to matching parenthesis
 fx - goto next char 'x', F same backwards
 tx - goto before next char 'x', same backwards
+; - repeat last 'f' or 't' find command
 * - goto next occurence of word under cursor
 ) - jump forward one sentence
 ( - jump backward one sentence

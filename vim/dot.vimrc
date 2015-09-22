@@ -8,6 +8,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'danro/rename.vim'
+"Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin indent on
@@ -56,6 +58,10 @@ set showmatch
 "incremental searching
 set incsearch 
 
+" emacs style searching case policy
+set ignorecase
+set smartcase
+
 if v:version > 703 
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
@@ -73,10 +79,16 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 let NERDTreeQuitOnOpen=1
 "remap jj to escape in insert mode
-inoremap jj <Esc>
+inoremap jk <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
+"nmap <leader>p <c-w>w
+nmap <c-p> <c-w>w
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l:
 nmap <leader>e :e<space>
+nmap <leader>g :YcmCompleter GoToDefinition<cr>
+nmap <leader>s :%s/
 nmap <leader>x :x<cr>
 nmap <leader>q :bd<cr>
 nmap <leader>b :buffers<cr>:b<space>
@@ -85,8 +97,21 @@ nmap <leader>n :NERDTree<cr>
 map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-nmap <S-Enter> i<cr><Esc> 
+nmap <S-Enter> i<cr><Esc>h
+nmap <c-Enter> o<Esc> 
 
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
+
+" syntastic options
+let g:syntastic_cpp_compiler = 'clang++-3.6'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"set dddstatusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

@@ -59,6 +59,7 @@ alias gad='git add'
 alias glg='git log'
 alias gps='git push'
 alias gpu='git pull'
+alias gdf='git diff'
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
