@@ -561,7 +561,7 @@ else
         hi PmenuThumb                   guibg=#585858
         hi SignColumn   guifg=#8a8a8a
         hi StatusLine                   guibg=#8a8a8a
-        hi StatusLineNC                 guibg=#8a8a8a
+        hi StatusLineNC                 guibg=#404040
         hi TabLine                      guibg=#8a8a8a
         hi TabLineFill                  guibg=#8a8a8a
         hi TabLineSel                   guibg=#005f87
@@ -574,7 +574,7 @@ else
         hi PmenuThumb                   guibg=#8a8a8a
         hi SignColumn   guifg=#bcbcbc
         hi StatusLine                   guibg=#bcbcbc
-        hi StatusLineNC                 guibg=#bcbcbc
+        hi StatusLineNC                 guibg=#101010
         hi TabLine                      guibg=#bcbcbc
         hi TabLineFill                  guibg=#bcbcbc
         hi TabLineSel                   guibg=#0087af
@@ -586,12 +586,13 @@ else
         hi PmenuSbar    guifg=#b2b2b2   guibg=#d0d0d0
         hi PmenuThumb                   guibg=#808080
         hi SignColumn   guifg=#b2b2b2
-        hi StatusLine                   guibg=#b2b2b2
-        hi StatusLineNC                 guibg=#b2b2b2
+        "hi StatusLine                   guibg=#5f8787
+        hi StatusLine                   guibg=#5f875f
+        hi StatusLineNC guifg=#000000                guibg=#585858
         hi TabLine                      guibg=#b2b2b2
         hi TabLineFill                  guibg=#b2b2b2
         hi TabLineSel                   guibg=#005f87
-        hi VertSplit                    guibg=#b2b2b2
+        hi VertSplit                    guibg=#808080
     endif
 endif
 

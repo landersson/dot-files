@@ -7,9 +7,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-fugitive'
 Plugin 'danro/rename.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+"Plugin 'bling/vim-airline'
 call vundle#end()
 
 filetype plugin indent on
@@ -20,6 +22,9 @@ set fenc=utf-8
 " automatically reread externally changed files (not modified in vim)
 set autoread
 set hidden
+
+set wildmode=longest,list,full
+set wildmenu
 
 " longer command history
 set history=1000
@@ -77,6 +82,9 @@ set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
+set laststatus=2
+set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
+
 let NERDTreeQuitOnOpen=1
 "remap jj to escape in insert mode
 inoremap jk <Esc>
@@ -87,7 +95,7 @@ nmap <c-p> <c-w>w
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l:
 nmap <leader>e :e<space>
-nmap <leader>g :YcmCompleter GoToDefinition<cr>
+nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>s :%s/
 nmap <leader>x :x<cr>
 nmap <leader>q :bd<cr>
@@ -107,7 +115,7 @@ let g:slime_paste_file = tempname()
 " syntastic options
 let g:syntastic_cpp_compiler = 'clang++-3.6'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
-"set dddstatusline+=%#warningmsg#
+"set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 

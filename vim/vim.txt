@@ -13,6 +13,7 @@ b - start of prev word
 fx - goto next char 'x', F same backwards
 tx - goto before next char 'x', same backwards
 ; - repeat last 'f' or 't' find command
+, - repeat last 'f' or 't' find command backwards
 * - goto next occurence of word under cursor
 ) - jump forward one sentence
 ( - jump backward one sentence
@@ -21,6 +22,7 @@ tx - goto before next char 'x', same backwards
 '' - jump to previous line
 ctrl-o - jump back in location history
 ctrl-i - jump forward in location history
+ctrl-6 - jump to other file
 
 # Help
 ctrl-] - follow help link
@@ -32,11 +34,13 @@ i - insert mode at current char
 I - insert mode at beggining of line
 a - append after the cursor
 A - append at the end of the line
+cc - indent and insert
 
 # Delete
 
 x - delete char under cursor
 X - backspace
+D - delete to end of line
 
 # Undo
 u - undo

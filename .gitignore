@@ -1,3 +1,6 @@
 *.swp
 
 vim/vim/bundle/[!V][!u][!n]*
+vim/vim/bundle/rename.vim/
+vim/vim/bundle/syntastic/
+
