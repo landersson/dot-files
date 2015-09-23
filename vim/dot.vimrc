@@ -23,6 +23,7 @@ set fenc=utf-8
 set autoread
 set hidden
 
+" better tab completion when opening files
 set wildmode=longest,list,full
 set wildmenu
 

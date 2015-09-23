@@ -306,7 +306,7 @@ else
     if s:contrast_bg == "high"
         hi Normal                       guibg=#121212
     else
-        hi Normal                       guibg=#1c1c1c
+        hi Normal                       guibg=#303030
     endif
 endif
 
@@ -369,6 +369,7 @@ else
         hi Statement    guifg=#5fafd7
         hi Title        guifg=#00afd7
         hi Type         guifg=#5fafaf
+        hi String      guifg=#800000
     elseif s:contrast == "high"
         hi Comment      guifg=#8a8a8a
         hi Constant     guifg=#ffffd7
@@ -379,16 +380,22 @@ else
         hi Statement    guifg=#afffff
         hi Title        guifg=#87d7ff
         hi Type         guifg=#afffff
+        hi String      guifg=#d75757
     else
         hi Comment      guifg=#808080
-        hi Constant     guifg=#d7d7af
+        hi Constant     guifg=#afafff
         hi Directory    guifg=#afd7af
         hi Identifier   guifg=#afd787
         hi PreProc      guifg=#87d7af
-        hi Special      guifg=#d7afd7
+        hi Special      guifg=#87d787
         hi Statement    guifg=#87d7ff
         hi Title        guifg=#5fafd7
         hi Type         guifg=#87d7d7
+        hi cString      guifg=#80af80
+        hi cCustomFunc      guifg=#d7d7d7
+        hi cCustomClass      guifg=#d70000
+        hi cCustomScope      guifg=#ffffff
+        hi cCustomClass      guifg=#9e9e9e
     endif
 endif
 
