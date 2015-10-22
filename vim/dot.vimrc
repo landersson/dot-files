@@ -11,6 +11,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'danro/rename.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'fs111/pydoc.vim'
 "Plugin 'bling/vim-airline'
 call vundle#end()
 
@@ -42,7 +43,7 @@ set sw=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 " wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
-set textwidth=120
+set textwidth=0
 
 " turn syntax highlighting on
 syntax on
@@ -86,6 +87,7 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 set laststatus=2
 set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
 
+let g:pydoc_cmd = 'python3 -m pydoc'
 let NERDTreeQuitOnOpen=1
 "remap jj to escape in insert mode
 inoremap jk <Esc>
@@ -96,6 +98,7 @@ nmap <c-p> <c-w>w
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l:
 nmap <leader>e :e<space>
+nmap <leader>v :vsp<space>
 nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>s :%s/
 nmap <leader>x :x<cr>
@@ -124,3 +127,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:ycm_register_as_syntastic_checker = 1

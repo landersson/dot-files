@@ -102,6 +102,11 @@ if [[ `uname` == Darwin ]]; then
     export PS1="\W:>"
 fi
 
-export PATH=$PATH:/usr/local/cuda-7.0/bin/
+export PATH=$PATH:/usr/local/cuda-7.0/bin/:/opt/pdal/bin
 export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64
 . /home/users/laan/torch/install/bin/torch-activate
+
+if [ -e $HOME/.bashrc.local ]; then
+    source $HOME/.bashrc.local 
+fi
+
