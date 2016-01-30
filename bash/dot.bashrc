@@ -101,11 +101,12 @@ if [[ `uname` == Darwin ]]; then
     source /opt/local//share/git/contrib/completion/git-completion.bash
     export PS1="\W:>"
 fi
-
+export LD_LIBRARY_PATH=""
 if [ -e  /usr/local/cuda-7.0/ ]; then
     export PATH=$PATH:/usr/local/cuda-7.0/bin/:/opt/pdal/bin
     export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64
 fi
+
 
 if [ -e $HOME/.bashrc.local ]; then
     source $HOME/.bashrc.local 

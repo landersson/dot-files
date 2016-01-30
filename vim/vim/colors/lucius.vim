@@ -393,6 +393,7 @@ else
         hi Type         guifg=#87d7d7
         hi cString      guifg=#80af80
         hi cCustomFunc      guifg=#d7d7d7
+        hi pythonSelf   guifg=#9e9e9e
         hi cCustomClass      guifg=#d70000
         hi cCustomScope      guifg=#ffffff
         hi cCustomClass      guifg=#9e9e9e

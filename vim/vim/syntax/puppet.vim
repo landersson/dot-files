@@ -34,7 +34,7 @@ syn match   puppetNodeRe        "/.*/" contained
 syn match   puppetInstance      "[A-Za-z0-9_-]\+\(::[A-Za-z0-9_-]\+\)*\s*{" contains=puppetTypeName,puppetTypeDefault,@NoSpell
 syn match   puppetInstance      "[A-Z][a-z_-]\+\(::[A-Z][a-z_-]\+\)*\s*[[{]" contains=puppetTypeName,puppetTypeDefault,@NoSpell
 syn match   puppetInstance      "[A-Z][a-z_-]\+\(::[A-Z][a-z_-]\+\)*\s*<\?<|" contains=puppetTypeName,puppetTypeDefault,@NoSpell
-syn match   puppetTypeName      "[a-z]\w*" contained
+s yn match   puppetTypeName      "[a-z]\w*" contained
 syn match   puppetTypeDefault   "[A-Z]\w*" contained
 
 syn match   puppetParam           "\w\+\s*\(=\|+\)>" contains=puppetTypeRArrow,puppetParamName

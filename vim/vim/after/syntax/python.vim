@@ -1,0 +1,1 @@
+syn keyword pythonSelf self
