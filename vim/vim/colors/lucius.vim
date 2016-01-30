@@ -392,11 +392,23 @@ else
         hi Title        guifg=#5fafd7
         hi Type         guifg=#87d7d7
         hi cString      guifg=#80af80
+        hi pythonString      guifg=#80af80
+        hi pythonInclude guifg=#7080ff
+        hi pythonFunction guifg=#b0e0e0
+        hi pythonDecorator guifg=#e0e0e0 
+        hi pythonQuotes      guifg=#a0cfa0
+        hi pythonString      guifg=#80af80
         hi cCustomFunc      guifg=#d7d7d7
         hi pythonSelf   guifg=#9e9e9e
-        hi cCustomClass      guifg=#d70000
-        hi cCustomScope      guifg=#ffffff
-        hi cCustomClass      guifg=#9e9e9e
+        hi pythonBuiltin   guifg=#c0a0f0
+        hi cInclude     guifg=#906050
+        "hi cStructure   
+        hi cType         guifg=#c0a0f0 
+        hi cppType       guifg=#c0a0f0 
+        hi cCustomClass  guifg=#d70000
+        hi cCustomScope  guifg=#ffffff
+        hi cCustomClass  guifg=#9e9e9e
+        hi PreProc       guifg=#c04030 
     endif
 endif
 
