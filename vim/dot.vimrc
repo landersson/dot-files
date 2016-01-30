@@ -9,9 +9,11 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
 Plugin 'danro/rename.vim'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
+"Plugin 'qpkorr/vim-bufkill'
 "Plugin 'bling/vim-airline'
 call vundle#end()
 
@@ -102,8 +104,9 @@ nmap <leader>v :vsp<space>
 nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>s :%s/
 nmap <leader>x :x<cr>
+nmap <leader>X :xa<cr>
 nmap <leader>q :bd<cr>
-nmap <leader>b :buffers<cr>:b<space>
+nmap <leader>b :buffers<cr>:b<space><space><backspace>
 nmap <leader>n :NERDTree<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
@@ -129,3 +132,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:ycm_register_as_syntastic_checker = 1
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
