@@ -112,8 +112,13 @@ map <leader>pp :setlocal paste!<cr>
 nmap <S-Enter> i<cr><Esc>h
 nmap <c-Enter> o<Esc> 
 
+function! RepeatChar(char, count)
+    return repeat(a:char, a:count)
+endfunction
+nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 " vim-slime
-let g:slime_target = "tmux"
+let g:slime_target = "timux"
 let g:slime_paste_file = tempname()
 
 " syntastic options
