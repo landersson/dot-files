@@ -369,7 +369,7 @@ else
         hi Statement    guifg=#5fafd7
         hi Title        guifg=#00afd7
         hi Type         guifg=#5fafaf
-        hi String      guifg=#800000
+        hi String       guifg=#800000
     elseif s:contrast == "high"
         hi Comment      guifg=#8a8a8a
         hi Constant     guifg=#ffffd7
@@ -390,25 +390,58 @@ else
         hi Special      guifg=#87d787
         hi Statement    guifg=#87d7ff
         hi Title        guifg=#5fafd7
-        hi Type         guifg=#87d7d7
-        hi cString      guifg=#80af80
-        hi pythonString      guifg=#80af80
+        hi Type         guifg=#8090ff
+        "hi Type         guifg=#87d7d7
+        hi String       guifg=#80af80
+        hi Function     guifg=#b0f0e0
+
+        "hi cString      guifg=#80af80
+
+        hi link pythonString String
+
+        "hi pythonString      guifg=#80af80
         hi pythonInclude guifg=#7080ff
-        hi pythonFunction guifg=#b0e0e0
+        hi pythonFunction guifg=#b0f0e0
+        hi link pythonFunction Function
         hi pythonDecorator guifg=#e0e0e0 
         hi pythonQuotes      guifg=#a0cfa0
-        hi pythonString      guifg=#80af80
-        hi cCustomFunc      guifg=#d7d7d7
+        "hi pythonString      guifg=#80af80
         hi pythonSelf   guifg=#9e9e9e
         hi pythonBuiltin   guifg=#c0a0f0
-        hi cInclude     guifg=#906050
-        "hi cStructure   
-        hi cType         guifg=#c0a0f0 
-        hi cppType       guifg=#c0a0f0 
-        hi cCustomClass  guifg=#d70000
-        hi cCustomScope  guifg=#ffffff
-        hi cCustomClass  guifg=#9e9e9e
-        hi PreProc       guifg=#c04030 
+
+        " C/C++ highlighting
+        hi link cString String
+        hi link cType Type
+        hi link cppType Type
+        hi cCustomFunc      guifg=#d7d7d7
+        hi cInclude         guifg=#906050
+        hi cStorageClass    guifg=#c0a0f0 
+        hi cCustomClass     guifg=#d70000
+        hi cCustomScope     guifg=#ffffff
+        hi cCustomClass     guifg=#9e9e9e
+        hi cPreCondit       guifg=#c04030 
+
+
+        hi link hsString String
+
+        hi rustSelf   guifg=#9e9e9e
+        hi rustModPath   guifg=#9e9e9e
+        hi rustStorage guifg=#ff9330
+        hi rustKeyword guifg=#b98053
+        hi rustIdentifier guifg=#e9a073
+        hi rustConditional guifg=#b98053
+        hi rustString      guifg=#80af80
+        hi rustMacro       guifg=#d06050 
+        hi rustOperator       guifg=#e0e0e0
+        hi rustSigil       guifg=#ffffff
+        hi rustFloat       guifg=#f4e1d4
+        hi rustDecNumber       guifg=#f4e1d4
+        hi rustEnum       guifg=#ffc020
+        hi rustEnumVariant       guifg=#ffd060
+        hi rustType       guifg=#f06020
+        hi rustBoolean       guifg=#f4e1d4
+        hi rustLifeTime guifg=#70b0d0
+        hi rustFuncCall guifg=#90b070 
     endif
 endif
 
@@ -726,8 +759,8 @@ for s:item in s:alternative_bold_items
                 \ "')), 'fg', 'gui')"
     exec "let s:temp_cterm_fg = synIDattr(synIDtrans(hlID('" . s:item .
                 \ "')), 'fg', 'cterm')"
-    exec "hi B" . s:item . " guifg=" . s:temp_gui_fg . " ctermfg=" .
-                \ s:temp_cterm_fg . " gui=bold cterm=bold term=none"
+    "exec "hi B" . s:item . " guifg=" . s:temp_gui_fg . " ctermfg=" .
+                "\ s:temp_cterm_fg . " gui=bold cterm=bold term=none"
 endfor
 
 
