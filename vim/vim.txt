@@ -1,6 +1,6 @@
 
 # Modes
-jj - command mode
+jk - command mode
 
 # Movement
 h - left
@@ -19,6 +19,8 @@ tx - goto before next char 'x', same backwards
 ( - jump backward one sentence
 } - jump forward one paragraph
 { - jump backward one paragraph
+[{ - jumo to start of Block
+]} - jumo to end of Block
 '' - jump to previous line
 ctrl-o - jump back in location history
 ctrl-i - jump forward in location history
@@ -36,11 +38,16 @@ a - append after the cursor
 A - append at the end of the line
 cc - indent and insert
 
+# Change
+c<motion> - delete and enter insert mode
+C - delete rest of line and enter insert code
+
 # Delete
 
 x - delete char under cursor
 X - backspace
 D - delete to end of line
+di" - delete inner double quoted string
 
 # Undo
 u - undo
@@ -60,11 +67,14 @@ ctrl-r<n> - insert register <n>
 = - autoindent selection
 == - autoindent current line
 :gg=G - autoindent entire buffer
+=aB - Indent A Block (including braces)
+=iB - Indent Inner Block (excluding braces)
 
 # Buffers
 
 <leader> e - load buffer
 <leader> w - save buffer
+<leader> <space> - save buffer
 <leader> b - list buffers and switch
 <leader> q - close buffer
 ctrl-^ - switch to previous buffer
@@ -77,6 +87,7 @@ ctrl-w q - quit window
 ctrl-w hjkl - move window left/bottom/top/right
 ctrl-w v - split vertically
 ctrl-w v - split horizontally
+ctrl-p - cycle windows
 
 # Copy/Paste
 
