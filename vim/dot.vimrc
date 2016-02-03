@@ -112,8 +112,12 @@ nmap <leader>n :NERDTree<cr>
 map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-nmap <S-Enter> i<cr><Esc>h
-nmap <c-Enter> o<Esc> 
+
+" Open new line and enter insert mode without indentation
+nmap <S-Enter> A<cr><Esc>I
+
+" Open new line without entering insert mode
+nmap <c-Enter> o<Esc>
 
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)

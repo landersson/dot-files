@@ -49,10 +49,13 @@ ctrl-r - redo
 # Indentation
 >> - Indent
 << - Unindent
+
+# Insert Mode commands
 ctrl-t - indent in insert mode
 ctrl-d - unindent in insert mode
 ctrl-w - backward delete word
 ctrl-u - backward delete line
+ctrl-r<n> - insert register <n>
 
 = - autoindent selection
 == - autoindent current line
