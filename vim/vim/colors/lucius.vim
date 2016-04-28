@@ -298,9 +298,9 @@ endif
 
 if s:style == "light"
     if s:contrast_bg == "high"
-        hi Normal                       guibg=#ffffff
+        hi Normal                       guibg=#ff0000
     else
-        hi Normal                       guibg=#eeeeee
+        hi Normal                       guibg=#e0d0c0
     endif
 else
     if s:contrast_bg == "high"
@@ -309,8 +309,6 @@ else
         hi Normal                       guibg=#303030
     endif
 endif
-
-call s:AddCterm("Normal")
 
 
 " ----------------------------------------------------------------------------
@@ -346,15 +344,93 @@ if s:style == "light"
         hi Title        guifg=#0087d7
         hi Type         guifg=#0087af
     else
-        hi Comment      guifg=#808080
-        hi Constant     guifg=#af5f00
-        hi Directory    guifg=#00875f
-        hi Identifier   guifg=#008700
-        hi PreProc      guifg=#008787
-        hi Special      guifg=#870087
-        hi Statement    guifg=#005faf
-        hi Title        guifg=#005faf
-        hi Type         guifg=#005f87
+        "hi Comment      guifg=#808080
+        "hi Constant     guifg=#af5f00
+        "hi Directory    guifg=#00875f
+        "hi Identifier   guifg=#008700
+        "hi PreProc      guifg=#008787
+        "hi Special      guifg=#870087
+        "hi Statement    guifg=#005faf
+        "hi Title        guifg=#005faf
+        "hi Type         guifg=#005f87
+
+        hi Comment      guifg=#907070
+        hi Constant     guifg=#008090
+        hi Directory    guifg=#afd7af
+        hi Identifier   guifg=#afd787
+        hi PreProc      guifg=#67b78f
+        hi Special      guifg=#87d787
+        "hi Statement    guifg=#87d7ff
+        hi Statement    guifg=#b02010
+        hi Title        guifg=#5fafd7
+        "hi Type         guifg=#8090ff
+        "hi Type         guifg=#5060cf
+        hi Type         guifg=#1020d0
+        "hi Type         guifg=#87d7d7
+        hi String       guifg=#307f30
+        "hi Function     guifg=#b0f0e0
+        hi Function     guifg=#80c0b0
+
+        "hi cString      guifg=#80af80
+
+        hi link pythonString String
+
+        "hi pythonStatement pythonStatement
+        hi pythonInclude guifg=#7080ff
+        hi pythonFunction guifg=#a0e0d0
+        hi link pythonFunction Function
+        hi pythonDecorator guifg=#e0e0e0 
+        hi pythonQuotes      guifg=#a0cfa0
+        "hi pythonString      guifg=#80af80
+        hi pythonSelf   guifg=#9e9e9e
+        hi pythonBuiltin   guifg=#c0a0f0
+
+        " C/C++ highlighting
+        hi link cString String
+        hi link cFormat String
+        hi link cConditional Statement
+        hi link cType Type
+        hi cSpecial guifg=#00d000
+        hi link cppType Type
+        "hi cConditional     guifg=#ff00ff
+        hi cCustomFunc      guifg=#002060
+        hi cInclude         guifg=#906050
+        "hi cStorageClass    guifg=#c0a0f0 
+        hi cStorageClass    guifg=#8020b0 
+        hi cCustomClass     guifg=#d70000
+        hi cCustomScope     guifg=#806000
+        hi cCustomClass     guifg=#707070
+        hi cUserLabel       guifg=#007070
+        hi link cppAccess cUserLabel
+        hi cPreCondit       guifg=#c04030 
+
+
+        hi link hsTypeDef cStorageClass
+        hi link hsString String
+        hi hsDelimiter guifg=#a0d0f0
+        hi hsNumber guifg=#40e0f0
+        hi hsStructure guifg=#a0b0e0
+        hi link hsIdentifier pythonFunction
+        
+
+        hi rustSelf   guifg=#9e9e9e
+        hi rustModPath   guifg=#9e9e9e
+        hi rustStorage guifg=#ff9330
+        hi rustKeyword guifg=#b98053
+        hi rustIdentifier guifg=#e9a073
+        hi rustConditional guifg=#b98053
+        hi rustString      guifg=#80af80
+        hi rustMacro       guifg=#d06050 
+        hi rustOperator       guifg=#e0e0e0
+        hi rustSigil       guifg=#ffffff
+        hi rustFloat       guifg=#f4e1d4
+        hi rustDecNumber       guifg=#f4e1d4
+        hi rustEnum       guifg=#ffc020
+        hi rustEnumVariant       guifg=#ffd060
+        hi rustType       guifg=#f06020
+        hi rustBoolean       guifg=#f4e1d4
+        hi rustLifeTime guifg=#70b0d0
+        hi rustFuncCall guifg=#90b070 
     endif
 else
     hi NonText      guifg=#5f5f87
@@ -388,7 +464,8 @@ else
         hi Identifier   guifg=#afd787
         hi PreProc      guifg=#87d7af
         hi Special      guifg=#87d787
-        hi Statement    guifg=#87d7ff
+        "hi Statement    guifg=#87d7ff
+        hi Statement    guifg=#8090ff
         hi Title        guifg=#5fafd7
         hi Type         guifg=#8090ff
         "hi Type         guifg=#87d7d7
@@ -399,9 +476,9 @@ else
 
         hi link pythonString String
 
-        "hi pythonString      guifg=#80af80
+        "hi pythonStatement pythonStatement
         hi pythonInclude guifg=#7080ff
-        hi pythonFunction guifg=#b0f0e0
+        hi pythonFunction guifg=#a0e0d0
         hi link pythonFunction Function
         hi pythonDecorator guifg=#e0e0e0 
         hi pythonQuotes      guifg=#a0cfa0
@@ -422,7 +499,13 @@ else
         hi cPreCondit       guifg=#c04030 
 
 
+        hi link hsTypeDef cStorageClass
         hi link hsString String
+        hi hsDelimiter guifg=#a0d0f0
+        hi hsNumber guifg=#40e0f0
+        hi hsStructure guifg=#a0b0e0
+        hi link hsIdentifier pythonFunction
+        
 
         hi rustSelf   guifg=#9e9e9e
         hi rustModPath   guifg=#9e9e9e
@@ -560,7 +643,7 @@ if s:style == "light"
     hi CursorLineNr guifg=#626262   guibg=#dadada
     hi FoldColumn                   guibg=#bcbcbc
     hi Folded                       guibg=#bcbcbc
-    hi LineNr       guifg=#9e9e9e   guibg=#dadada
+    hi LineNr       guifg=#302010   guibg=#c0b0a0
     hi PmenuSel                     guibg=#afd7ff
     hi SignColumn                   guibg=#d0d0d0
     hi StatusLineNC guifg=#dadada
@@ -574,7 +657,8 @@ if s:style == "light"
         hi PmenuSbar    guifg=#9e9e9e   guibg=#626262
         hi PmenuThumb                   guibg=#9e9e9e
         hi SignColumn   guifg=#808080
-        hi StatusLine                   guibg=#9e9e9e
+        "hi StatusLine                   guibg=#9e9e9e
+        hi StatusLine                   guibg=#5f875f
         hi StatusLineNC                 guibg=#9e9e9e
         hi TabLine                      guibg=#9e9e9e
         hi TabLineFill                  guibg=#9e9e9e
@@ -588,6 +672,7 @@ if s:style == "light"
         hi PmenuThumb                   guibg=#9e9e9e
         hi SignColumn   guifg=#626262
         hi StatusLine                   guibg=#808080
+        hi StatusLine                   guibg=#5f875f
         hi StatusLineNC                 guibg=#808080
         hi TabLine                      guibg=#808080
         hi TabLineFill                  guibg=#808080
@@ -735,7 +820,7 @@ endfor
 " ============================================================================
 
 for s:item in s:normal_items + s:bold_items + s:underline_items
-    call s:AddCterm(s:item)
+    "call s:AddCterm(s:item)
 endfor
 
 for s:item in s:undercurl_items

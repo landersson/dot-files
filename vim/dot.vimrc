@@ -46,6 +46,7 @@ set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 " wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
 set textwidth=0
+set nofoldenable
 
 " turn syntax highlighting on
 syntax on
@@ -54,6 +55,7 @@ set bg=dark
 
 "colorscheme lucius
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+    let g:lucius_contrast_bg = 'high'
     let g:lucius_contrast_bg = 'high'
 endif
 colorscheme lucius
