@@ -15,6 +15,7 @@ Plugin 'dag/vim2hs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
 "Plugin 'bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
