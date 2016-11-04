@@ -53,13 +53,16 @@ set nofoldenable
 syntax on
 set t_Co=256
 set bg=dark
-
-"colorscheme lucius
-if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-    let g:lucius_contrast_bg = 'high'
-    let g:lucius_contrast_bg = 'high'
+if has("gui_running") 
+    "colorscheme lucius
+    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+        let g:lucius_contrast_bg = 'high'
+        let g:lucius_contrast_bg = 'high'
+    endif
+    colorscheme lucius
+else
+    colorscheme laan
 endif
-colorscheme lucius
 
 " turn line numbers on
 set number
