@@ -15,6 +15,8 @@ Plugin 'dag/vim2hs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
 "Plugin 'bling/vim-airline'
+Plugin 'kana/vim-textobj-user'
+Plugin 'lucapette/vim-textobj-underscore.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
 call vundle#end()
@@ -92,9 +94,13 @@ set guioptions-=L
 set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 set laststatus=2
 set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
+
+let g:ctrlp_map = '<c-k>'
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:pydoc_cmd = 'python3 -m pydoc'
 let NERDTreeQuitOnOpen=1
