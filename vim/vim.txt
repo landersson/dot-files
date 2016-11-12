@@ -25,6 +25,7 @@ tx - goto before next char 'x', same backwards
 ctrl-o - jump back in location history
 ctrl-i - jump forward in location history
 ctrl-6 - jump to other file
+ctrl-l - enter command line mode
 
 # Help
 ctrl-] - follow help link

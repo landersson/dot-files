@@ -15,6 +15,10 @@ Plugin 'dag/vim2hs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
 "Plugin 'bling/vim-airline'
+Plugin 'kana/vim-textobj-user'
+Plugin 'lucapette/vim-textobj-underscore.git'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -52,13 +56,16 @@ set nofoldenable
 syntax on
 set t_Co=256
 set bg=dark
-
-"colorscheme lucius
-if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-    let g:lucius_contrast_bg = 'high'
-    let g:lucius_contrast_bg = 'high'
+if has("gui_running") 
+    "colorscheme lucius
+    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+        let g:lucius_contrast_bg = 'high'
+        let g:lucius_contrast_bg = 'high'
+    endif
+    colorscheme lucius
+else
+    colorscheme laan
 endif
-colorscheme lucius
 
 " turn line numbers on
 set number
@@ -87,9 +94,13 @@ set guioptions-=L
 set pastetoggle=<f5>
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 set laststatus=2
 set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
+
+let g:ctrlp_map = '<c-k>'
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:pydoc_cmd = 'python3 -m pydoc'
 let NERDTreeQuitOnOpen=1
@@ -105,8 +116,8 @@ nmap <leader>e :e<space>
 nmap <leader>v :vsp<space>
 nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>s :%s/
-nmap <leader>x :x<cr>
-nmap <leader>q :bd<cr>
+nmap <leader>X :x<cr>
+nmap <leader>q :bp\|bd #<cr>
 nmap <leader>b :buffers<cr>:b<space>
 nmap <leader>n :NERDTree<cr>
 " Pressing ,ss will toggle and untoggle spell checking
@@ -125,6 +136,10 @@ function! RepeatChar(char, count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " vim-slime
 let g:slime_target = "timux"
