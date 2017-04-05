@@ -98,7 +98,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 if [[ `uname` == Darwin ]]; then 
-    source /opt/local//share/git/contrib/completion/git-completion.bash
+    if [ -f /opt/local//share/git/contrib/completion/git-completion.bash ]; then
+        source /opt/local//share/git/contrib/completion/git-completion.bash
+    fi
     export PS1="\W:>"
 fi
 export LD_LIBRARY_PATH=""
