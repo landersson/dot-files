@@ -114,8 +114,3 @@ if [ -e $HOME/.bashrc.local ]; then
 fi
 
 
-
-. /home/users/laan/torch/install/bin/torch-activate
-
-
-. /home/users/laan/torch/install/bin/torch-activate
