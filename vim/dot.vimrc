@@ -125,6 +125,7 @@ nmap <leader>n :NERDTree<cr>
 map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+map Y y$
 
 " Open new line and enter insert mode without indentation
 nmap <S-Enter> A<cr><Esc>I
@@ -160,10 +161,12 @@ let g:syntastic_check_on_wq = 0
 
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_cache_omnifunc=0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
