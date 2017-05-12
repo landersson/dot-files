@@ -44,6 +44,9 @@ set nocompatible
 set autoindent
 " use intelligent indentation for C
 set smartindent
+" do not indent c++ namespaces
+set cino=N-s,g0,j1,(0
+
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
 set sw=4
