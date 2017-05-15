@@ -18,7 +18,7 @@ Plugin 'fs111/pydoc.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'lucapette/vim-textobj-underscore.git'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/swap-parameters'
 call vundle#end()
 
@@ -60,16 +60,17 @@ set nofoldenable
 syntax on
 set t_Co=256
 set bg=dark
-if has("gui_running") 
+"if has("gui_running") 
+    ""colorscheme lucius
+    "if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+        "let g:lucius_contrast_bg = 'high'
+    "endif
     "colorscheme lucius
-    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-        let g:lucius_contrast_bg = 'high'
-        let g:lucius_contrast_bg = 'high'
-    endif
-    colorscheme lucius
-else
-    colorscheme laan
-endif
+"else
+    "colorscheme laan
+"endif
+let g:lucius_contrast_bg = 'high'
+colorscheme lucius
 
 " turn line numbers on
 set number
@@ -77,8 +78,8 @@ set number
 set showmatch
 " intelligent comments
 "set comments=sl:/*,mb:\ *,elx:\ */
-"incremental searching
-set incsearch 
+
+set incsearch "incremental searching
 
 " emacs style searching case policy
 set ignorecase
@@ -103,12 +104,9 @@ autocmd BufWritePre *.{py,cc,h} :%s/\s\+$//e
 set laststatus=2
 set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
 
-let g:ctrlp_map = '<c-k>'
-let g:ctrlp_cmd = 'CtrlP'
-
 let g:pydoc_cmd = 'python3 -m pydoc'
 let NERDTreeQuitOnOpen=1
-"remap jj to escape in insert mode
+"remap jk to escape in insert mode
 inoremap jk <Esc>
 let mapleader=","
 nmap <leader>w :w!<cr>
@@ -124,6 +122,7 @@ nmap <leader>X :x<cr>
 nmap <leader>q :bp\|bd #<cr>
 nmap <leader>b :buffers<cr>:b<space>
 nmap <leader>n :NERDTree<cr>
+nmap <leader>m :CtrlPMRU<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
@@ -134,7 +133,7 @@ map Y y$
 nmap <S-Enter> A<cr><Esc>I
 
 " Open new line without entering insert mode
-nmap <c-Enter> o<Esc>
+"nmap <c-Enter> o<Esc>
 
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)
