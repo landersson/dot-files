@@ -4,7 +4,7 @@ let g:haskell_conceal              = 0
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-unimpaired'
@@ -19,7 +19,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'lucapette/vim-textobj-underscore.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'rust-lang/rust.vim'
-Plugin 'vim-scripts/swap-parameters'
+Plugin 'machakann/vim-swap'
+"Plugin 'vim-scripts/swap-parameters'
 call vundle#end()
 
 filetype plugin indent on
@@ -60,17 +61,17 @@ set nofoldenable
 syntax on
 set t_Co=256
 set bg=dark
-"if has("gui_running") 
-    ""colorscheme lucius
-    "if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-        "let g:lucius_contrast_bg = 'high'
-    "endif
+if has("gui_running") 
     "colorscheme lucius
-"else
-    "colorscheme laan
-"endif
-let g:lucius_contrast_bg = 'high'
-colorscheme lucius
+    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+        let g:lucius_contrast_bg = 'high'
+    endif
+    colorscheme lucius
+else
+    colorscheme laan
+endif
+"let g:lucius_contrast_bg = 'high'
+"colorscheme lucius
 
 " turn line numbers on
 set number
@@ -109,31 +110,31 @@ let NERDTreeQuitOnOpen=1
 "remap jk to escape in insert mode
 inoremap jk <Esc>
 let mapleader=","
-nmap <leader>w :w!<cr>
-"nmap <leader>p <c-w>w
-nmap <c-p> <c-w>w
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l:
-nmap <leader>e :e<space>
-nmap <leader>v :vsp<space>
-nmap <leader>g :YcmCompleter GoTo<cr>
-nmap <leader>s :%s/
-nmap <leader>X :x<cr>
-nmap <leader>q :bp\|bd #<cr>
-nmap <leader>b :buffers<cr>:b<space>
-nmap <leader>n :NERDTree<cr>
-nmap <leader>m :CtrlPMRU<cr>
+nnoremap <leader>w :w!<cr>
+"nnoremap <leader>p <c-w>w
+nnoremap <c-p> <c-w>w
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l:
+nnoremap <leader>e :e<space>
+nnoremap <leader>v :vsp<space>
+nnoremap <leader>g :YcmCompleter GoTo<cr>
+nnoremap <leader>s :%s/
+nnoremap <leader>X :x<cr>
+nnoremap <leader>q :bp\|bd #<cr>
+nnoremap <leader>b :buffers<cr>:b<space>
+nnoremap <leader>n :NERDTree<cr>
+nnoremap <leader>m :CtrlPMRUFiles<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+noremap <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-map Y y$
+noremap <leader>pp :setlocal paste!<cr>
+noremap Y y$
 
 " Open new line and enter insert mode without indentation
-nmap <S-Enter> A<cr><Esc>I
-
+nnoremap <S-Enter> A<cr><Esc>I
 " Open new line without entering insert mode
-"nmap <c-Enter> o<Esc>
+"nnoremap <c-Enter> o<Esc>
 
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)
