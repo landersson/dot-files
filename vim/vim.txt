@@ -66,6 +66,8 @@ ctrl-w - backward delete word
 ctrl-u - backward delete line
 ctrl-r<n> - insert register <n>
 
+# Autoindent
+
 = - autoindent selection
 == - autoindent current line
 :gg=G - autoindent entire buffer
@@ -76,7 +78,6 @@ ctrl-r<n> - insert register <n>
 
 <leader> e - load buffer
 <leader> w - save buffer
-<leader> <space> - save buffer
 <leader> b - list buffers and switch
 <leader> q - close buffer
 ctrl-^ - switch to previous buffer
@@ -89,11 +90,13 @@ ctrl-w q - quit window
 ctrl-w hjkl - move window left/bottom/top/right
 ctrl-w v - split vertically
 ctrl-w v - split horizontally
+ctrl-w r - rotate windows
 ctrl-p - cycle windows
 
 # Copy/Paste
 
 yy - yank line
+K - yank from cursor to end of line (custom)
 Y - yank line
 v - visual mark
 V - linewise visual mark
