@@ -166,6 +166,8 @@ nnoremap <leader>v :vsp<space>
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>s :%s/
 nnoremap <leader>X :x<cr>
+nnoremap <leader>xw <c-w>q
+nnoremap <leader>xq :cclose<cr>
 nnoremap <leader>q :bp\|bd #<cr>
 nnoremap <leader>b :buffers<cr>:b<space>
 nnoremap <leader>n :NERDTree<cr>

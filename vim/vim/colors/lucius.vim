@@ -550,6 +550,7 @@ hi StatusLine   guifg=bg
 hi TabLine      guifg=bg
 hi TabLineSel   guifg=fg
 hi WildMenu     guifg=fg
+hi QFLineNr     guifg=#b04030
 
 hi ColorColumn                  guibg=#3a3a3a
 hi CursorLineNr guifg=#9e9e9e   guibg=#444444
