@@ -145,7 +145,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " CtrlP options
-"let g:ctrlp_map = '<leader>>p:>'
+let g:ctrlp_map = '' 
 let g:ctrlp_match_current_file = 1
 
 let g:pydoc_cmd = 'python3 -m pydoc'

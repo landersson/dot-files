@@ -396,9 +396,14 @@ else
         hi cCustomScope     guifg=#ffffff
         hi cCustomScope     guifg=#b0d0ff
         hi cCustomClass     guifg=#9e9e9e
+
+        "hi cIndlude ?
+        "hi cIncluded ?
+        hi cPreProc       guifg=#c04030 
+        hi cDefine       guifg=#c04030 
         hi cPreCondit       guifg=#c04030 
         hi cppStructure guifg=#e06080
-        hi cStructure guifg=#e06080
+        hi link cStructure cppStructure
 
 
         " Haskell highlighting
