@@ -304,7 +304,7 @@ if s:style == "light"
     endif
 else
     if s:contrast_bg == "high"
-        hi Normal                       guibg=#121212
+        hi Normal                       guibg=#161616
     else
         hi Normal                       guibg=#303030
     endif
@@ -357,7 +357,7 @@ else
         hi Type         guifg=#afffff
         hi String      guifg=#d75757
     else
-        hi Comment      guifg=#808080
+        hi Comment      guifg=#686860
         hi Constant     guifg=#afafff
         hi Directory    guifg=#afd7af
         hi Identifier   guifg=#afd787
@@ -392,10 +392,11 @@ else
         hi cCustomFunc      guifg=#d7d7d7
         hi cInclude         guifg=#906050
         hi cStorageClass    guifg=#c0a0f0 
-        hi cCustomClass     guifg=#d70000
-        hi cCustomScope     guifg=#ffffff
-        hi cCustomScope     guifg=#b0d0ff
-        hi cCustomClass     guifg=#9e9e9e
+        "hi cCustomClass     guifg=#d70000
+        "hi cCustomScope     guifg=#ffffff
+        hi cCustomScope     guifg=#e0a0ff
+        "hi cCustomScope     guifg=#b0d0ff
+        hi cCustomClass     guifg=#b0b0b0
 
         "hi cIndlude ?
         "hi cIncluded ?
