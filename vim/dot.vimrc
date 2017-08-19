@@ -22,6 +22,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'rust-lang/rust.vim'
 Plugin 'machakann/vim-swap'
 Plugin 'mileszs/ack.vim'
+Plugin 'rodjek/vim-puppet'
 call vundle#end()
 
 filetype plugin indent on
