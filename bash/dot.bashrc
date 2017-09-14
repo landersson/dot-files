@@ -47,6 +47,7 @@ alias cvstat="cvs status | grep Status:"
 alias la='ls -A'
 alias l="less"
 alias ssh="ssh -X"
+alias dbm='printf "\e[?2004l"'
 
 # puppet aliases
 alias pag='puppet agent'
