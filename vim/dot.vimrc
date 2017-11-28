@@ -161,6 +161,8 @@ nnoremap <leader>w :w!<cr>
 nnoremap <c-p> <c-w>w
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l:
+nnoremap <leader>z :e #<cr>
+nnoremap <leader>l <c-w>w
 nnoremap <leader>e :e<space>
 nnoremap <leader>v :vsp<space>
 nnoremap <leader>g :YcmCompleter GoTo<cr>
@@ -174,6 +176,7 @@ nnoremap <leader>n :NERDTree<cr>
 nnoremap <leader>m :CtrlPMRUFiles<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>` :vsplit $MYVIMRC<cr>
+nnoremap <leader>% :so %<cr>
 " Pressing ,ss will toggle and untoggle spell checking
 noremap <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
@@ -196,7 +199,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " show symbol id for word under cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+noremap <leader>xs :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \. synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
