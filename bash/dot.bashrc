@@ -47,6 +47,7 @@ alias cvstat="cvs status | grep Status:"
 alias la='ls -A'
 alias l="less"
 alias ssh="ssh -X"
+alias dbm='printf "\e[?2004l"'
 
 # puppet aliases
 alias pag='puppet agent'
@@ -104,7 +105,7 @@ if [[ `uname` == Darwin ]]; then
     export PS1="\W:>"
 fi
 export LD_LIBRARY_PATH=""
-export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin/
 if [ -e  /usr/local/cuda-8.0/ ]; then
     export PATH=$PATH:/usr/local/cuda-8.0/bin/
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64
@@ -115,4 +116,4 @@ if [ -e $HOME/.bashrc.local ]; then
     source $HOME/.bashrc.local 
 fi
 
-
+export PP=/etc/puppetlabs/code/environments/production/
