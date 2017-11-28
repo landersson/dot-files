@@ -47,6 +47,8 @@ alias cvstat="cvs status | grep Status:"
 alias la='ls -A'
 alias l="less"
 alias ssh="ssh -X"
+alias dgx1a="ssh -t pearcey.hpc.csiro.au ssh dgx1-1"
+alias dgx1b="ssh -t pearcey.hpc.csiro.au ssh dgx1-2"
 
 # puppet aliases
 alias pag='puppet agent'
@@ -116,3 +118,4 @@ if [ -e $HOME/.bashrc.local ]; then
 fi
 
 export PP=/etc/puppetlabs/code/environments/production/
+export WRK=/OSM/CBR/D61_RCV/work/and502/
