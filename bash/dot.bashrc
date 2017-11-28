@@ -49,6 +49,7 @@ alias l="less"
 alias ssh="ssh -X"
 alias dgx1a="ssh -t pearcey.hpc.csiro.au ssh dgx1-1"
 alias dgx1b="ssh -t pearcey.hpc.csiro.au ssh dgx1-2"
+alias dbm='printf "\e[?2004l"'
 
 # puppet aliases
 alias pag='puppet agent'

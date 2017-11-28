@@ -419,6 +419,7 @@ else
         " Rust highlighting
         hi rustSelf   guifg=#9e9e9e
         hi rustModPath   guifg=#9e9e9e
+        hi rustModPathSep   guifg=#87af85
         hi rustStorage guifg=#ff9330
         hi rustKeyword guifg=#b98053
         hi rustIdentifier guifg=#e9a073
@@ -426,18 +427,26 @@ else
         hi rustString      guifg=#80af80
         hi rustMacro       guifg=#d06050 
         hi rustOperator       guifg=#e0e0e0
-        hi rustSigil       guifg=#ffffff
+        hi rustAttribute       guifg=#a0a0a0
+        hi rustDerive       guifg=#a0a0a0
+        hi rustSigil       guifg=#e0e0e0
         hi rustFloat       guifg=#f4e1d4
-        hi rustDecNumber       guifg=#f4e1d4
-        hi rustEnum       guifg=#ffc020
-        hi rustEnumVariant       guifg=#ffd060
-        hi rustType       guifg=#f06020
-        hi rustRepeat       guifg=#80afd7
-        hi rustBoolean       guifg=#f4e1d4
+        "hi rustDecNumber       guifg=#f4e1d4
+        hi rustDecNumber       guifg=#80a0d0
+        hi rustFloat       guifg=#80a0d0
+        hi rustEnum       guifg=#e8a820
+        hi rustEnumVariant       guifg=#e8a820
+        hi rustType       guifg=#d06030
+        hi rustTypeDef       guifg=#d06030
+        hi rustRepeat guifg=#b98053
+        "hi rustRepeat       guifg=#80afd7
+        "hi rustBoolean       guifg=#f4e1d4
+        hi rustBoolean       guifg=#80a0d0
         hi rustStructure       guifg=#87af87
         hi rustLifeTime guifg=#70b0d0
-        hi rustFuncCall guifg=#90b070 
-        hi Function guifg=#d7af87
+        hi rustFuncCall guifg=#a0a0a0
+        hi rustFunction guifg=#d7af87
+        hi rustFuncName guifg=#d7af87
     endif
 endif
 

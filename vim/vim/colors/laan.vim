@@ -1,14 +1,14 @@
-" Tomorrow Night - Full Colour and 256 Colour
+" Tomorrow Night - Full Colour and 255 Colour
 " http://chriskempson.com
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
-let s:background = "1d1f21"
+let s:background = "303030"
 let s:selection = "373b41"
 let s:line = "282a2e"
-let s:comment = "969896"
+let s:comment = "686860"
 let s:red = "cc6666"
 let s:orange = "de935f"
 let s:yellow = "f0c674"
@@ -20,7 +20,7 @@ let s:window = "4d5057"
 
 " Console 256 Colours
 if !has("gui_running")
-	let s:background = "282828"
+	let s:background = "303030"
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
 	let s:selection = "585858"
@@ -247,8 +247,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
-	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
-	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
+	call <SID>X("StatusLine", "5f875f", "", "")
+	call <SID>X("StatusLineNC", "585858", "000000", "")
 	call <SID>X("VertSplit", s:window, s:window, "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
@@ -272,26 +272,27 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("Todo", s:comment, s:background, "")
-	call <SID>X("Title", s:comment, "", "")
-	call <SID>X("Identifier", s:red, "", "none")
-	call <SID>X("Statement", s:foreground, "", "")
-	call <SID>X("Conditional", s:foreground, "", "")
-	call <SID>X("Repeat", s:foreground, "", "")
+	call <SID>X("Todo", "d7d75f", s:background, "")
+	call <SID>X("Title", "5fafd7", "", "")
+	call <SID>X("Identifier", "afd787", "", "none")
+	call <SID>X("Statement", "8090ff", "", "")
+	call <SID>X("Conditional", "8090ff", "", "")
+	"call <SID>X("Repeat", s:foreground, "", "")
+    "hi link repeat 
 	call <SID>X("Structure", s:purple, "", "")
-	call <SID>X("Function", s:blue, "", "")
-	call <SID>X("Constant", s:orange, "", "")
-	call <SID>X("String", s:green, "", "")
-	call <SID>X("Special", s:foreground, "", "")
-	call <SID>X("PreProc", s:purple, "", "")
-	call <SID>X("Operator", s:aqua, "", "none")
-	call <SID>X("Type", s:blue, "", "none")
-	call <SID>X("Define", s:purple, "", "none")
-	call <SID>X("Include", s:blue, "", "")
+	call <SID>X("Function", "a0e0d0", "", "")
+	call <SID>X("Constant", "afafff", "", "")
+	call <SID>X("String", "80af80", "", "")
+	call <SID>X("Special", "87d787", "", "")
+	call <SID>X("PreProc", "87d7af", "", "")
+	call <SID>X("Operator", "8090ff", "", "none")
+	call <SID>X("Type", "78d7d7", "", "none")
+	call <SID>X("Define", "87d7af", "", "none")
+	call <SID>X("Include", "87d7af", "", "")
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X("vimCommand", "80afff", "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
@@ -321,12 +322,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
-	call <SID>X("pythonStatement", s:purple, "", "")
-	call <SID>X("pythonConditional", s:purple, "", "")
+	"call <SID>X("pythonStatement", s:purple, "", "")
+    hi link PythonConditional Conditional
+	call <SID>X("PythonStatement", "8090ff", "", "")
+	call <SID>X("pythonConditional", "8090ff", "", "")
 	call <SID>X("pythonRepeat", s:purple, "", "")
 	call <SID>X("pythonException", s:purple, "", "")
-	call <SID>X("pythonFunction", s:blue, "", "")
-	call <SID>X("pythonBuiltin", s:blue, "", "")
+	call <SID>X("pythonFunction", "a0e0d0", "", "")
+	call <SID>X("pythonBuiltin", "c0aff0", "", "")
+	call <SID>X("pythonSelf", "b0b0b0", "", "")
+	call <SID>X("pythonInclude", "7080ff", "", "")
+    hi link Repeat Statement
+    hi link pythonRepeat Repeat
 
 	" Go Highlighting
 	call <SID>X("goStatement", s:purple, "", "")
@@ -354,6 +361,38 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:red, "", "")
 	call <SID>X("htmlArg", s:red, "", "")
 	call <SID>X("htmlScriptTag", s:red, "", "")
+    "
+    " Rust highlighting
+    call <SID>X("rustString", "80af80", "", "")
+    call <SID>X("rustSelf", "9e9e9e", "", "")
+    call <SID>X("rustModPath",   "9e9e9e", "", "")
+    call <SID>X("rustModPathSep",   "87af85", "", "")
+    call <SID>X("rustStorage", "ff9330", "", "")
+    call <SID>X("rustKeyword", "b98053", "", "")
+    call <SID>X("rustIdentifier", "e9a073", "", "")
+    call <SID>X("rustConditional", "b98053", "", "")
+    call <SID>X("rustMacro",       "d06050 ", "", "")
+    call <SID>X("rustOperator",       "e0e0e0", "", "")
+    call <SID>X("rustAttribute",       "a0a0a0", "", "")
+    call <SID>X("rustDerive",       "a0a0a0", "", "")
+    call <SID>X("rustSigil",       "e0e0e0", "", "")
+    call <SID>X("rustFloat",       "f4e1d4", "", "")
+    "call <SID>X("rustDecNumber",       "f4e1d4", "", "")
+    call <SID>X("rustDecNumber",       "80a0d0", "", "")
+    call <SID>X("rustFloat",       "80a0d0", "", "")
+    call <SID>X("rustEnum",       "e8a820", "", "")
+    call <SID>X("rustEnumVariant",       "e8a820", "", "")
+    call <SID>X("rustType",       "d06030", "", "")
+    call <SID>X("rustTypeDef",       "d06030", "", "")
+    call <SID>X("rustRepeat", "b98053", "", "")
+    "call <SID>X("rustRepeat",       "80afd7", "", "")
+    "call <SID>X("rustBoolean",       "f4e1d4", "", "")
+    call <SID>X("rustBoolean",       "80a0d0", "", "")
+    call <SID>X("rustStructure",       "87af87", "", "")
+    call <SID>X("rustLifeTime", "70b0d0", "", "")
+    call <SID>X("rustFuncCall", "a0a0a0", "", "")
+    call <SID>X("rustFunction", "d7af87", "", "")
+    call <SID>X("rustFuncName", "d7af87", "", "")
 
 	" Diff Highlighting
   let s:diffbackground = "494e56"
