@@ -26,6 +26,12 @@ if !has("gui_running")
 	let s:selection = "585858"
 end
 
+if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+    let g:lucius_contrast_bg = 'high'
+	let s:background = "1a1a1a"
+    let s:line = "28fa2e"
+endif
+
 set background=dark
 hi clear
 syntax reset
@@ -259,6 +265,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("MatchParen", "", s:selection, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
+	call <SID>X("Cursor", "df0000", s:background, "reverse")
 	if version >= 700
 		call <SID>X("CursorLine", "", s:line, "none")
 		call <SID>X("CursorColumn", "", s:line, "none")

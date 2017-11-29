@@ -69,10 +69,10 @@ set t_Co=256
 set bg=dark
 if has("gui_running") 
     "colorscheme lucius
-    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-        let g:lucius_contrast_bg = 'high'
-    endif
-    colorscheme lucius
+    "ff (match(system("cat /etc/issue"), "Ubuntu") != -1)
+        "let g:lucius_contrast_bg = 'high'
+    "endif
+    colorscheme laan
 else
     colorscheme laan
 endif
@@ -187,7 +187,7 @@ noremap Y y$
 " Open new line and enter insert mode without indentation
 nnoremap <S-Enter> A<cr><Esc>I
 " Open new line without entering insert mode
-"nnoremap <c-Enter> o<Esc>
+nnoremap <c-Enter> o<Esc>
 
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)
