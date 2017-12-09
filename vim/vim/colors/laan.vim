@@ -13,6 +13,7 @@ let s:red = "cc6666"
 let s:orange = "de935f"
 let s:yellow = "f0c674"
 let s:green = "85bd68"
+"let s:green = "850000"
 let s:aqua = "8abeb7"
 let s:blue = "81a2be"
 let s:purple = "b294bb"
@@ -29,7 +30,8 @@ end
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
     let g:lucius_contrast_bg = 'high'
 	let s:background = "1a1a1a"
-    let s:line = "28fa2e"
+    "let s:line = "28fa2e"
+    let s:line = "a12d00"
 endif
 
 set background=dark
@@ -259,7 +261,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
-	call <SID>X("MoreMsg", s:green, "", "")
+	"call <SID>X("MoreMsg", s:green, "", "")
+	call <SID>X("MoreMsg", "ff0000", "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
 	call <SID>X("MatchParen", "", s:selection, "")

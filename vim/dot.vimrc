@@ -8,6 +8,7 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'jpalardy/vim-slime' " for pasting test into screen/tmux sessions
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround' 
 Plugin 'danro/rename.vim'
 "Plugin 'dag/vim2hs'
 "Plugin 'scrooloose/syntastic'
@@ -105,6 +106,8 @@ set guioptions-=r
 set guioptions-=L
 set pastetoggle=<f5>
 
+set shortmess+=c
+
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " strip trailing whitespace on code files before each buffer write
@@ -178,6 +181,7 @@ nnoremap <leader>m :CtrlPMRUFiles<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>` :vsplit $MYVIMRC<cr>
 nnoremap <leader>% :so %<cr>
+nnoremap <leader><space> i<space><Esc>la<space><Esc>h
 " Pressing ,ss will toggle and untoggle spell checking
 noremap <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
