@@ -24,6 +24,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'machakann/vim-swap'
 Plugin 'mileszs/ack.vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'Vimjas/vim-python-pep8-indent'
 call vundle#end()
 
 filetype plugin indent on
@@ -109,7 +110,7 @@ set pastetoggle=<f5>
 set shortmess+=c
 
 " Automatically cd into the directory that the file is in
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " strip trailing whitespace on code files before each buffer write
 autocmd BufWritePre *.{py,cc,h} :%s/\s\+$//e
 
@@ -167,7 +168,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l:
 nnoremap <leader>z :e #<cr>
 nnoremap <leader>l <c-w>w
-nnoremap <leader>e :e<space>
+"nnoremap <leader>e :e<space>
+" edit file in the same directory 
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>v :vsp<space>
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>s :%s/
@@ -202,7 +205,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap <leader>rr :RustRun<cr>
+noremap <leader>rr :w<cr>:RustRun<cr>
 
 " show symbol id for word under cursor
 noremap <leader>xs :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
