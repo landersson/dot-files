@@ -23,7 +23,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-
 export EDITOR=vim
 
 # check the window size after each command and, if necessary,
@@ -108,9 +107,9 @@ if [[ `uname` == Darwin ]]; then
 fi
 export LD_LIBRARY_PATH=""
 export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin/
-if [ -e  /usr/local/cuda-8.0/ ]; then
-    export PATH=$PATH:/usr/local/cuda-8.0/bin/
-    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64
+if [ -e  /usr/local/cuda-9.1/ ]; then
+    export PATH=$PATH:/usr/local/cuda-9.1/bin/
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64
 fi
 
 

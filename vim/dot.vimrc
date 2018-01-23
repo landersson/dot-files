@@ -171,6 +171,7 @@ nnoremap <leader>e :e<space>
 nnoremap <leader>v :vsp<space>
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>s :%s/
+nnoremap <leader>a ct_
 nnoremap <leader>X :x<cr>
 nnoremap <leader>xw <c-w>q
 nnoremap <leader>xq :cclose<cr>
