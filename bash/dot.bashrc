@@ -105,12 +105,8 @@ if [[ `uname` == Darwin ]]; then
     fi
     export PS1="\W:>"
 fi
-export LD_LIBRARY_PATH=""
-export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin/
-if [ -e  /usr/local/cuda-9.1/ ]; then
-    export PATH=$PATH:/usr/local/cuda-9.1/bin/
-    export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64
-fi
+#export LD_LIBRARY_PATH=""
+export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin/:$HOME/.local/bin
 
 
 if [ -e $HOME/.bashrc.local ]; then

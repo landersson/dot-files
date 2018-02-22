@@ -80,6 +80,8 @@ else
 endif
 "let g:lucius_contrast_bg = 'high'
 "colorscheme lucius
+"highlight matching angle brackets
+:set matchpairs+=<:> 
 
 " turn line numbers on
 set number
