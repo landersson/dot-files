@@ -1,4 +1,4 @@
-*.swp
+*.sw?
 
 vim/vim/bundle/[!V][!u][!n]*
 vim/vim/bundle/rename.vim/
