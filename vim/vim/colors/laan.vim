@@ -356,12 +356,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     hi link PythonConditional Conditional
 	call <SID>X("PythonStatement", "8090ff", "", "")
 	call <SID>X("pythonConditional", "8090ff", "", "")
-	call <SID>X("pythonRepeat", s:purple, "", "")
-	call <SID>X("pythonException", s:purple, "", "")
+	call <SID>X("pythonRepeat", "8090ff", "", "")
+	call <SID>X("pythonException", "c06080", "", "")
+	call <SID>X("pythonExceptions", "f07080", "", "")
 	call <SID>X("pythonFunction", "a0e0d0", "", "")
 	call <SID>X("pythonBuiltin", "c0aff0", "", "")
 	call <SID>X("pythonSelf", "b0b0b0", "", "")
 	call <SID>X("pythonInclude", "7080ff", "", "")
+	"call <SID>X("pythonOperator", "c080c0", "", "")
+	call <SID>X("pythonOperator", "8090ff", "", "")
+    call <SID>X("pythonNumber", "e06080", "", "")
+    call <SID>X("pythonDecoratorName", "d05070", "", "")
+    call <SID>X("pythonDecorator", "e06080", "", "")
     hi link Repeat Statement
     hi link pythonRepeat Repeat
 
