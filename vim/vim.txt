@@ -9,7 +9,6 @@ k - up
 l - right
 w - start of next word
 b - start of prev word
-% - move to matching parenthesis
 fx - goto next char 'x', F same backwards
 tx - goto before next char 'x', same backwards
 ; - repeat last 'f' or 't' find command

@@ -3,28 +3,24 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
-"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'jpalardy/vim-slime' " for pasting test into screen/tmux sessions
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround' 
 Plugin 'danro/rename.vim'
-"Plugin 'dag/vim2hs'
-"Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fs111/pydoc.vim'
-"Plugin 'bling/vim-airline'
 Plugin 'kana/vim-textobj-user'
 Plugin 'lucapette/vim-textobj-underscore.git'
 Plugin 'Julian/vim-textobj-variable-segment' 
 Plugin 'sgur/vim-textobj-parameter'
 Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'rust-lang/rust.vim'
 Plugin 'machakann/vim-swap'
 Plugin 'mileszs/ack.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 filetype plugin indent on
@@ -48,10 +44,13 @@ set termencoding=utf-8
 
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
+
 " use indentation of previous line
 set autoindent
+
 " use intelligent indentation for C
 set smartindent
+
 " c/c++ indentation options
 set cino=N-s,g0,j1,(0,t0
 
@@ -78,19 +77,20 @@ if has("gui_running")
 else
     colorscheme laan
 endif
-"let g:lucius_contrast_bg = 'high'
-"colorscheme lucius
+
 "highlight matching angle brackets
-:set matchpairs+=<:> 
+set matchpairs+=<:> 
 
 " turn line numbers on
 set number
 " highlight matching braces
+
 set showmatch
 " intelligent comments
 "set comments=sl:/*,mb:\ *,elx:\ */
 
-set incsearch "incremental searching
+ "incremental searching
+set incsearch
 
 " emacs style searching case policy
 set ignorecase
@@ -119,7 +119,7 @@ autocmd BufWritePre *.{py,cc,h} :%s/\s\+$//e
 set laststatus=2
 set statusline=%<\ %n:%F\ %m%r%y%=%-35.(L:\ %l\/\%L,\ C:\ %c%V\ (%P)%)
 
-""" Plugin options """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"--- Plugin options ------------------------------------------------------------ 
 
 " ack
 if executable('ag')
@@ -142,13 +142,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " YCM options
+let g:ycm_always_populate_loc_list = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_cache_omnifunc=0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " CtrlP options
@@ -156,9 +157,8 @@ let g:ctrlp_map = ''
 let g:ctrlp_match_current_file = 1
 
 let g:pydoc_cmd = 'python3 -m pydoc'
-let NERDTreeQuitOnOpen=1
 
-""" Keyboard mapping """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"--- Keyboard mapping ------------------------------------------------------------  
 
 "remap jk to escape in insert mode
 inoremap jk <Esc>
@@ -170,7 +170,6 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l:
 nnoremap <leader>z :e #<cr>
 nnoremap <leader>l <c-w>w
-"nnoremap <leader>e :e<space>
 " edit file in the same directory 
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>v :vsp<space>
@@ -208,6 +207,8 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Compile buffer as rust and run
 noremap <leader>rr :w<cr>:RustRun<cr>
 
 " show symbol id for word under cursor
