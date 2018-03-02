@@ -19,7 +19,8 @@ let s:green = "85bd68"
 let s:aqua = "8abeb7"
 let s:blue = "81a2be"
 let s:purple = "b294bb"
-let s:window = "4d5057"
+"let s:window = "4d5057"
+let s:window = "404040"
 
 " Console 256 Colours
 if !has("gui_running")
@@ -250,10 +251,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
-	call <SID>X("LineNr", "505050", "282828", "")
+	call <SID>X("LineNr", "505050", "181818", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-    call <SID>X("Search", s:background, s:yellow, "")
+    call <SID>X("Search", s:background, s:yellow, "")  
 	"call <SID>X("Search", s:background, "ff00ff", "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", "4f774f", "", "")
@@ -271,10 +272,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("FoldColumn", "", s:background, "")
 	call <SID>X("Cursor", "df0000", s:background, "reverse")
 	if version >= 700
-		call <SID>X("CursorLine", "000000", s:yellow, "none")
+		"call <SID>X("CursorLine", "000000", s:yellow, "none")          " ctrl-p selection etc
+		call <SID>X("CursorLine", "e0e0e0", "402000", "none")          " ctrl-p selection etc
 		call <SID>X("CursorColumn", "", s:line, "none")
-		call <SID>X("PMenu", s:foreground, s:selection, "none")
-		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
+		call <SID>X("PMenu", s:foreground, s:selection, "none")        " completion menu entries
+		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse") 
 		call <SID>X("SignColumn", "", s:background, "none")
 	end
 	if version >= 703
@@ -282,6 +284,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 	call <SID>X("qfError", "8f0000", "d0d0d0", "reverse")
 	call <SID>X("qfLineNr", "d0d0d0", "", "")
+    call <SID>X("CtrlPMatch", "ffffff", "", "")
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
@@ -340,7 +343,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("vimCommand", "80afff", "", "none")
 
 	" C Highlighting
-	"call <SID>X("cPreProc", "c04030", "", "")
     hi link cType Type
     hi link cStucture Structure
     hi link cDefine Define
@@ -349,11 +351,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     hi link cRepeat Repeat
     "hi link cStatement Statement
     hi link cInclude Include
+    hi link cNumber Number
     hi link cOperator Operator
     hi link cCustomFunc Function
 
     hi link cppStructure Structure
     hi link cppNumber Number
+    hi link cppType Type
     
     "hi link cppStatement Statement
 
@@ -369,6 +373,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X("cNumber", "e06080", "", "")
     "call <SID>X("cppNumber", "e06080", "", "")
     "call <SID>X("cppModifier", "a080df", "", "")
+	call <SID>X("cPreProc", "c04030", "", "")
     call <SID>X("cFormat", "90bf90", "", "")
     call <SID>X("cSpecial", "90bf90", "", "")
 
