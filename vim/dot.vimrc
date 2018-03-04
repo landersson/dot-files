@@ -21,6 +21,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'pangloss/vim-javascript'
+"Plugin 'iandoe/vim-osx-colorpicker'
 call vundle#end()
 
 filetype plugin indent on
@@ -65,18 +66,19 @@ set textwidth=0
 set nofoldenable
 
 " turn syntax highlighting on
-syntax on
-set t_Co=256
-set bg=dark
+colorscheme
+"set t_Co=256
+
 if has("gui_running") 
-    "colorscheme lucius
-    "ff (match(system("cat /etc/issue"), "Ubuntu") != -1)
-        "let g:lucius_contrast_bg = 'high'
-    "endif
-    colorscheme laan
+    "colorscheme laan
+    set bg=light
+    colorscheme solarized
 else
+    "colorscheme solarized
+    set bg=dark
     colorscheme laan
 endif
+syntax on
 
 "highlight matching angle brackets
 set matchpairs+=<:> 
@@ -177,15 +179,15 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>s :%s/
 nnoremap <leader>a ct_
 nnoremap <leader>X :x<cr>
-nnoremap <leader>xw <c-w>q
-nnoremap <leader>xq :cclose<cr>
+nnoremap <leader>xw <c-w>q       " close current window
+nnoremap <leader>xq :cclose<cr>  " close quickfix
 nnoremap <leader>q :bp\|bd #<cr>
 nnoremap <leader>b :buffers<cr>:b<space>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap <leader>m :CtrlPMRUFiles<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>` :vsplit $MYVIMRC<cr>
-nnoremap <leader>% :so %<cr>
+nnoremap <leader>% :w<cr>:so %<cr>
 nnoremap <leader><space> i<space><Esc>la<space><Esc>h
 " Pressing ,ss will toggle and untoggle spell checking
 noremap <leader>ss :setlocal spell!<cr>
@@ -216,3 +218,10 @@ noremap <leader>xs :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \. synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+function! ReturnHighlightTerm(group, term)
+   " Store output of group to variable
+   let output = execute('hi ' . a:group)
+
+   " Find the term we're looking for
+   return matchstr(output, a:term.'=\zs\S*')
+endfunction
