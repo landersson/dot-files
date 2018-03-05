@@ -18,7 +18,7 @@ let s:window = "404040"
 let s:contrast="low"
 
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-	let s:contrast = "high"
+	"let s:contrast = "high"
     let s:line = "a12d00"
 endif
 
@@ -77,11 +77,16 @@ elseif s:contrast == "low"
 
         let s:comment = "707070"
     endif
+
 else
     "let s:foreground = "c5c8c6"
     "let s:background = "ff0000"  " not implemented
 endif
 
+if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+    let s:background = "1a1a1a"
+    let s:line = "a12d00"
+endif
 set background=dark
 hi clear
 syntax reset
@@ -351,7 +356,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("String", s:green, "", "")
 	call <SID>X("Special", s:purple, "", "")
 	call <SID>X("PreProc", s:red, "", "")
-	call <SID>X("Operator", "d0d0d0", "", "none")
+	call <SID>X("Operator", s:cyan, "", "none")
 	call <SID>X("Type", s:cyan, "", "none")
 	call <SID>X("Define", s:grey2, "", "none")
 	call <SID>X("Include", s:brown, "", "")
@@ -428,23 +433,26 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
 	"call <SID>X("pythonStatement", s:purple, "", "")
-    hi link PythonConditional Conditional
-	call <SID>X("PythonStatement", "8090ff", "", "")
-	call <SID>X("pythonConditional", "8090ff", "", "")
-	call <SID>X("pythonRepeat", "8090ff", "", "")
-	call <SID>X("pythonException", "c06080", "", "")
-	call <SID>X("pythonExceptions", "f07080", "", "")
-	call <SID>X("pythonFunction", "a0e0d0", "", "")
-	call <SID>X("pythonBuiltin", "c0aff0", "", "")
-	call <SID>X("pythonSelf", "b0b0b0", "", "")
-	call <SID>X("pythonInclude", "7080ff", "", "")
-	"call <SID>X("pythonOperator", "c080c0", "", "")
-	call <SID>X("pythonOperator", "8090ff", "", "")
-    call <SID>X("pythonNumber", "e06080", "", "")
-    call <SID>X("pythonDecoratorName", "d05070", "", "")
-    call <SID>X("pythonDecorator", "e06080", "", "")
+	"call <SID>X("PythonStatement", "8090ff", "", "")
+	"call <SID>X("pythonConditional", "8090ff", "", "")
+	"call <SID>X("pythonRepeat", "8090ff", "", "")
+	"call <SID>X("pythonException", "c06080", "", "")
+	"call <SID>X("pythonExceptions", "f07080", "", "")
+    call <SID>X("pythonFunction", s:cyan, "", "")
+	call <SID>X("pythonBuiltin", s:purple, "", "")
+    call <SID>X("pythonSelf", s:grey2, "", "")
+	"call <SID>X("pythonInclude", "7080ff", "", "")
+	""call <SID>X("pythonOperator", "c080c0", "", "")
+	"call <SID>X("pythonOperator", "8090ff", "", "")
+    "call <SID>X("pythonNumber", "e06080", "", "")
+    call <SID>X("pythonDecoratorName", s:red, "", "")
+    "call <SID>X("pythonDecorator", "e06080", "", "")
     hi link Repeat Statement
     hi link pythonRepeat Repeat
+    hi link pythonStatement Statement
+    "hi link pythonFunction Function
+    hi link pythonConditional Conditional
+    hi link PythonNumber Number
 
 
 	" JavaScript Highlighting
