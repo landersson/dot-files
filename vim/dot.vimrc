@@ -21,6 +21,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'pangloss/vim-javascript'
+Plugin 'timonv/vim-cargo'
 "Plugin 'iandoe/vim-osx-colorpicker'
 call vundle#end()
 
