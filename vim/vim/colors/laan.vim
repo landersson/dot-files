@@ -18,7 +18,7 @@ let s:window = "404040"
 let s:contrast="low"
 
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-	"let s:contrast = "high"
+	let s:contrast = "high"
     let s:line = "a12d00"
 endif
 
@@ -32,13 +32,26 @@ end
 
 
 if s:contrast == "high"
-    "let s:foreground = "c5c8c6"
-    "let s:selection = "373b41"
-    "let s:grey1 = "b0b0b0"
-    "let s:purple = "afafff"
-    "let s:background = "1a1a1a"
-    "let s:line = "a12d00"
-    "let s:green = "80af80"
+
+    let s:line = "a12d00"
+
+    let s:background = "1a1a1a"
+    let s:foreground = "a0a0a0"
+    let s:foreground2 = "9090a8"
+    let s:selection = "405060"
+    let s:grey1 = "909090"
+    let s:grey2 = "808080"
+    let s:green = "608870"
+    let s:steel = "8090b0"
+    let s:blue = "8090e0"
+    let s:purple = "a880d8"
+    let s:cyan = "70a0b0"
+    let s:violet = "c06080"
+    let s:red = "b04050"
+    let s:brown = "906050"
+
+    let s:comment = "707070"
+
 elseif s:contrast == "low"
 
     if (&background == "dark")
@@ -53,7 +66,7 @@ elseif s:contrast == "low"
         let s:steel = "8090b0"
         let s:blue = "8090e0"
         let s:purple = "a088d0"
-        let s:cyan = "70a0a0"
+        let s:cyan = "7098a8"
         let s:violet = "c06080"
         let s:red = "b04050"
         let s:brown = "906050"
@@ -83,10 +96,6 @@ else
     "let s:background = "ff0000"  " not implemented
 endif
 
-if (match(system("cat /etc/issue"), "Ubuntu") != -1)
-    let s:background = "1a1a1a"
-    let s:line = "a12d00"
-endif
 set background=dark
 hi clear
 syntax reset
