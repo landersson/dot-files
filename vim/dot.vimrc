@@ -67,8 +67,8 @@ set textwidth=0
 set nofoldenable
 
 " turn syntax highlighting on
-colorscheme
-"set t_Co=256
+"colorscheme
+set t_Co=256
 let g:solarized_contrast="high"
 if has("gui_running") 
     "colorscheme laan
