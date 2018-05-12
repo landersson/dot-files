@@ -70,9 +70,9 @@ set nofoldenable
 set t_Co=256
 let g:solarized_contrast="high"
 if has("gui_running") 
-    "colorscheme laan
-    set bg=light
-    colorscheme solarized
+    colorscheme laan
+    "set bg=light
+    "colorscheme solarized
 else
     "colorscheme solarized
     set bg=dark
