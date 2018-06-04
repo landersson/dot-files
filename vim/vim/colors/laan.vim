@@ -11,6 +11,7 @@ let s:line = "c04010"
 let s:comment = "707070"
 let s:orange = "de935f"
 let s:yellow = "d0a654"
+"let s:yellow = "ff0000"
 "let s:green = "850000"
 "let s:window = "4d5057"
 let s:window = "404040"
@@ -315,12 +316,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("LineNr", "505050", "181818", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-    call <SID>X("Search", s:background, s:yellow, "")  
-	"call <SID>X("Search", s:background, "ff00ff", "")
+    "call <SID>X("Search", s:background, s:orange, "")              " quickfix highlights
+    call <SID>X("Search", "c0c0c0", "303060", "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
+	call <SID>X("Terminal", s:grey1, "", "")
     call <SID>X("StatusLine", "5f885f", "", "")
-	"call <SID>X("StatusLine", "cf582f", "", "")
-	call <SID>X("StatusLineNC", "484848", "c0c0c0", "")
+    call <SID>X("StatusLineTerm", "000000", "5f5f88", "")
+	call <SID>X("StatusLineNC", "484848", "a0a0a0", "")
+	call <SID>X("StatusLineTermNC", "c0c0c0", "484848", "")
 	call <SID>X("VertSplit", s:window, s:window, "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
@@ -328,8 +331,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("MoreMsg", "e0e0e0", "", "")
 	call <SID>X("Question", "e0e0e0", "", "")
-	call <SID>X("WarningMsg", "f0d000", "", "")
-	call <SID>X("MatchParen", "ff3000", "202020", "")
+	call <SID>X("WarningMsg", "f08040", "", "")
+	call <SID>X("ErrorMsg", "b03030", s:background, "")
+	call <SID>X("MatchParen", "ff5010", "202020", "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	call <SID>X("Cursor", "df0000", s:background, "reverse")
@@ -365,7 +369,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("String", s:green, "", "")
 	call <SID>X("Special", s:purple, "", "")
 	call <SID>X("PreProc", s:red, "", "")
-	call <SID>X("Operator", s:cyan, "", "none")
+	"call <SID>X("Operator", s:cyan, "", "none")
 	call <SID>X("Type", s:cyan, "", "none")
 	call <SID>X("Define", s:grey2, "", "none")
 	call <SID>X("Include", s:brown, "", "")
@@ -373,14 +377,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("Ignore", "666666", "", "")
     "
     " VimScript Highlighting 
-    call <SID>X("VimParenSep", "d0d0d0", "", "")
+    call <SID>X("VimParenSep", s:foreground2, "", "")
     call <SID>X("VimVar", s:foreground, "", "")
-    call <SID>X("VimFuncVar", "d0b0f0", "", "")
+    call <SID>X("VimFuncVar", s:purple, "", "")
     call <SID>X("VimOption", "a0a0a0", "", "")
 
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", "80afff", "", "none")
+	call <SID>X("vimCommand", s:steel, "", "none")
 
 	" C Highlighting
     hi link cType Type
@@ -503,37 +507,45 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     "
     " Rust highlighting
-    call <SID>X("rustString", "80af80", "", "")
-    call <SID>X("rustSelf", "9e9e9e", "", "")
-    call <SID>X("rustModPath",   "9e9e9e", "", "")
-    call <SID>X("rustModPathSep",   "87af85", "", "")
-    call <SID>X("rustStorage", "ff9330", "", "")
-    call <SID>X("rustKeyword", "b98053", "", "")
-    call <SID>X("rustIdentifier", "e9a073", "", "")
-    call <SID>X("rustConditional", "b98053", "", "")
-    call <SID>X("rustMacro",       "d06050 ", "", "")
-    call <SID>X("rustOperator",       "e0e0e0", "", "")
-    call <SID>X("rustAttribute",       "a0a0a0", "", "")
-    call <SID>X("rustDerive",       "a0a0a0", "", "")
-    call <SID>X("rustSigil",       "e0e0e0", "", "")
-    call <SID>X("rustFloat",       "f4e1d4", "", "")
-    "call <SID>X("rustDecNumber",       "f4e1d4", "", "")
-    call <SID>X("rustDecNumber",       "80a0d0", "", "")
-    call <SID>X("rustFloat",       "80a0d0", "", "")
-    call <SID>X("rustEnum",       "e8a820", "", "")
-    call <SID>X("rustEnumVariant",       "e8a820", "", "")
-    call <SID>X("rustType",       "d06030", "", "")
-    call <SID>X("rustTypeDef",       "d06030", "", "")
-    call <SID>X("rustRepeat", "b98053", "", "")
-    "call <SID>X("rustRepeat",       "80afd7", "", "")
-    "call <SID>X("rustBoolean",       "f4e1d4", "", "")
-    call <SID>X("rustBoolean",       "80a0d0", "", "")
-    call <SID>X("rustStructure",       "87af87", "", "")
-    call <SID>X("rustLifeTime", "70b0d0", "", "")
-    call <SID>X("rustFuncCall", "a0a0a0", "", "")
-    call <SID>X("rustFunction", "d7af87", "", "")
-    call <SID>X("rustFuncName", "d7af87", "", "")
+    "call <SID>X("rustString", "80af80", "", "")
+    "call <SID>X("rustSelf", "9e9e9e", "", "")
+    "call <SID>X("rustModPath",   "9e9e9e", "", "")
+    "call <SID>X("rustModPathSep",   "87af85", "", "")
+    "call <SID>X("rustStorage", "ff9330", "", "")
+    "call <SID>X("rustKeyword", "b98053", "", "")
+    "call <SID>X("rustIdentifier", "e9a073", "", "")
+    "call <SID>X("rustConditional", "b98053", "", "")
+    "call <SID>X("rustMacro",       "d06050 ", "", "")
+    "call <SID>X("rustOperator",       "e0e0e0", "", "")
+    "call <SID>X("rustAttribute",       "a0a0a0", "", "")
+    "call <SID>X("rustDerive",       "a0a0a0", "", "")
+    "call <SID>X("rustSigil",       "e0e0e0", "", "")
+    "call <SID>X("rustFloat",       "f4e1d4", "", "")
+    ""call <SID>X("rustDecNumber",       "f4e1d4", "", "")
+    "call <SID>X("rustDecNumber",       "80a0d0", "", "")
+    "call <SID>X("rustFloat",       "80a0d0", "", "")
+    "call <SID>X("rustEnum",       "e8a820", "", "")
+    "call <SID>X("rustEnumVariant",       "e8a820", "", "")
+    "call <SID>X("rustType",       "d06030", "", "")
+    "call <SID>X("rustTypeDef",       "d06030", "", "")
+    "call <SID>X("rustRepeat", "b98053", "", "")
+    ""call <SID>X("rustRepeat",       "80afd7", "", "")
+    ""call <SID>X("rustBoolean",       "f4e1d4", "", "")
+    "call <SID>X("rustBoolean",       "80a0d0", "", "")
+    "call <SID>X("rustStructure",       "87af87", "", "")
+    "call <SID>X("rustLifeTime", "70b0d0", "", "")
+    "call <SID>X("rustFuncCall", "a0a0a0", "", "")
+    "call <SID>X("rustFunction", "d7af87", "", "")
+    "call <SID>X("rustFuncName", "d7af87", "", "")
 
+    hi link rustString String
+    hi link rustOperator Normal
+    hi link rustFuncName Function
+    hi link rustFuncCall Normal
+    hi link rustMacro Normal
+    hi link rustKeyword Statement
+    hi link rustDecNumber Number
+    "call <SID>X("rustMacro", s:purple, "", "")
 	" Diff Highlighting
     let s:diffbackground = "494e56"
 

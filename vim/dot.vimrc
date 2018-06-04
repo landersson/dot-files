@@ -68,6 +68,8 @@ set nofoldenable
 
 " turn syntax highlighting on
 "colorscheme
+let g:terminal_ansi_colors = [
+            \ "#000000", "#a82838", "#108020", "#a07010", "#4060e0", "#a050b0", "#109090", "#707070", "#909090", "#b84050", "#309040", "#c09010", "#5080f0", "#c070d0", "#30c0c0", "#c0c0c0"]
 set t_Co=256
 let g:solarized_contrast="high"
 if has("gui_running") 
@@ -187,6 +189,7 @@ nnoremap <leader>b :buffers<cr>:b<space>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap <leader>m :CtrlPMRUFiles<cr>
 nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>t :botright split<cr>:term ++curwin<cr>
 nnoremap <leader>` :vsplit $MYVIMRC<cr>
 nnoremap <leader>% :w<cr>:so %<cr>
 nnoremap <leader><space> i<space><Esc>la<space><Esc>h
@@ -204,6 +207,34 @@ nnoremap <c-Enter> o<Esc>
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)
 endfunction
+
+function! BottomTerminal()
+    botright split
+endfunction
+
+function! Handler(ch, msg) 
+    echo "Handler"
+    let n = input('Press Enter to Continue')
+    "windo q
+endfunction
+
+
+function! Hello()
+    write
+    let l:fdir = expand('%:p:h')
+    "echo "HERE"
+    "echo "DIR=".l:fdir
+    botright split
+    lcd `=l:fdir`
+    "echo "DIR".expand('%:p:h')
+    "pwd
+    "terminal ++curwin cargo run
+    let trm = term_start('cargo run', { 'exit_cb': 'Handler', 'curwin': 1 })
+
+    "wincmd p
+endfunction
+
+
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 noremap <Up> <NOP>
@@ -213,6 +244,7 @@ noremap <Right> <NOP>
 
 " Compile buffer as rust and run
 noremap <leader>rr :w<cr>:RustRun<cr>
+noremap <leader>re :w<cr>:call CargoCmd()<cr>
 
 " show symbol id for word under cursor
 noremap <leader>xs :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
