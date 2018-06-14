@@ -22,7 +22,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'pangloss/vim-javascript'
 Plugin 'timonv/vim-cargo'
-"Plugin 'iandoe/vim-osx-colorpicker'
+Plugin 'landersson/vim-term-cargo'
 call vundle#end()
 
 filetype plugin indent on
@@ -208,32 +208,6 @@ function! RepeatChar(char, count)
     return repeat(a:char, a:count)
 endfunction
 
-function! BottomTerminal()
-    botright split
-endfunction
-
-function! Handler(ch, msg) 
-    echo "Handler"
-    let n = input('Press Enter to Continue')
-    "windo q
-endfunction
-
-
-function! Hello()
-    write
-    let l:fdir = expand('%:p:h')
-    "echo "HERE"
-    "echo "DIR=".l:fdir
-    botright split
-    lcd `=l:fdir`
-    "echo "DIR".expand('%:p:h')
-    "pwd
-    "terminal ++curwin cargo run
-    let trm = term_start('cargo run', { 'exit_cb': 'Handler', 'curwin': 1 })
-
-    "wincmd p
-endfunction
-
 
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
@@ -244,7 +218,6 @@ noremap <Right> <NOP>
 
 " Compile buffer as rust and run
 noremap <leader>rr :w<cr>:RustRun<cr>
-noremap <leader>re :w<cr>:call CargoCmd()<cr>
 
 " show symbol id for word under cursor
 noremap <leader>xs :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
