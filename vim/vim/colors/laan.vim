@@ -55,42 +55,23 @@ if s:contrast == "high"
 
 elseif s:contrast == "low"
 
-    if (&background == "dark")
+    let s:background = "242424"
+    let s:foreground = "a0a0a0"
+    let s:foreground2 = "9090a8"
+    let s:selection = "405060"
+    let s:grey1 = "909090"
+    let s:grey2 = "808080"
+    let s:green = "608870"
+    let s:steel = "506080"
+    let s:blue = "8090e0"
+    "let s:purple = "a088d0"
+    let s:purple = "9890c0"
+    let s:cyan = "7098a8"
+    let s:violet = "c06080"
+    let s:red = "b04050"
+    let s:brown = "906050"
 
-        let s:background = "242424"
-        let s:foreground = "a0a0a0"
-        let s:foreground2 = "9090a8"
-        let s:selection = "405060"
-        let s:grey1 = "909090"
-        let s:grey2 = "808080"
-        let s:green = "608870"
-        let s:steel = "8090b0"
-        let s:blue = "8090e0"
-        let s:purple = "a088d0"
-        let s:cyan = "7098a8"
-        let s:violet = "c06080"
-        let s:red = "b04050"
-        let s:brown = "906050"
-
-        let s:comment = "707070"
-    else
-        let s:background = "e0e0e0"
-        let s:foreground = "a0a0a0"
-        let s:foreground2 = "9090a8"
-        let s:selection = "405060"
-        let s:grey1 = "909090"
-        let s:grey2 = "808080"
-        let s:green = "608870"
-        let s:steel = "8090b0"
-        let s:blue = "8090e0"
-        let s:purple = "a088d0"
-        let s:cyan = "70a0a0"
-        let s:violet = "c06080"
-        let s:red = "b04050"
-        let s:brown = "906050"
-
-        let s:comment = "707070"
-    endif
+    let s:comment = "707070"
 
 else
     "let s:foreground = "c5c8c6"
@@ -543,8 +524,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     hi link rustFuncName Function
     hi link rustFuncCall Normal
     hi link rustMacro Normal
+    hi link rustModPath Normal
     hi link rustKeyword Statement
     hi link rustDecNumber Number
+    call <SID>X("rustEnumVariant", s:grey2, "", "")
     "call <SID>X("rustMacro", s:purple, "", "")
 	" Diff Highlighting
     let s:diffbackground = "494e56"
