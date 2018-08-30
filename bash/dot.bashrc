@@ -33,6 +33,7 @@ shopt -s checkwinsize
 if [[ "$TERM" != "dumb" ]]; then
     if [[ `uname` == "Darwin" ]]; then
         alias ls="ls -p -G" 
+        export LSCOLORS=gxfxcxdxbxegedabagacad
         export LS_COLORS='ex=01;37'
     else      
         eval "`dircolors -b`"
