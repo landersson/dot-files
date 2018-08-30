@@ -339,7 +339,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
             call <SID>X("StatusLineNC", "484848", "c0c0c0", "")
             call <SID>X("StatusLineTerm", "000000", "3f683f", "")
             call <SID>X("StatusLineTermNC", "c0c0c0", "484848", "")
-            call <SID>X("Title", "5fafd7", "", "")
+            call <SID>X("Title", "2f7fa7", "", "")
             call <SID>X("Todo", "d02000", s:background, "")
             call <SID>X("WarningMsg", "805000", "", "")
             call <SID>X("qfError", "8f0000", "d0d0d0", "reverse")
