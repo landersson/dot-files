@@ -66,21 +66,22 @@ set expandtab        " expand tabs to spaces
 set textwidth=0
 set nofoldenable
 
-" turn syntax highlighting on
-"colorscheme
+" builtin terminal ansi colors
 let g:terminal_ansi_colors = [
-            \ "#000000", "#a82838", "#108020", "#a07010", "#4060e0", "#a050b0", "#109090", "#707070", "#909090", "#b84050", "#309040", "#c09010", "#5080f0", "#c070d0", "#30c0c0", "#c0c0c0"]
+            \ "#000000", "#a82838", "#108020", "#a07010", "#4060e0", "#a050b0", "#109090", "#707070",
+            \ "#909090", "#b84050", "#309040", "#c09010", "#5080f0", "#c070d0", "#30c0c0", "#c0c0c0"]
 set t_Co=256
-let g:solarized_contrast="high"
+
 if has("gui_running") 
-    colorscheme laan
-    "set bg=light
-    "colorscheme solarized
+    "colorscheme laan
+    set bg=light
 else
-    "colorscheme solarized
     set bg=dark
-    colorscheme laan
 endif
+
+" turn syntax highlighting on
+let g:solarized_contrast="high"
+colorscheme blueberry
 syntax on
 
 "highlight matching angle brackets
@@ -207,7 +208,6 @@ nnoremap <c-Enter> o<Esc>
 function! RepeatChar(char, count)
     return repeat(a:char, a:count)
 endfunction
-
 
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
