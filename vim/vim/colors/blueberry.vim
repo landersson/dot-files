@@ -44,7 +44,7 @@ elseif s:contrast == "low"
         let s:purple = "78288e"
         let s:red = "a82010"
         let s:selection = "959eaa"
-        let s:steel = "405070"
+        let s:steel = "304080"
         let s:violet = "a03050"
         let s:window = "a0a0a0"
         let s:yellow = "d0a654"
@@ -355,7 +355,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
             call <SID>X("MoreMsg", "e0e0e0", "", "")
             call <SID>X("Question", "e0e0e0", "", "")
             call <SID>X("Search", "c0c0c0", "303060", "")
-            call <SID>X("StatusLine", "5f885f", "", "")
+            call <SID>X("StatusLine", "4f7858", "", "")
             call <SID>X("StatusLineNC", "484848", "a0a0a0", "")
             call <SID>X("StatusLineTerm", "000000", "5f5f88", "")
             call <SID>X("StatusLineTermNC", "c0c0c0", "484848", "")
@@ -372,10 +372,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X("VimParenSep", s:foreground2, "", "")
     call <SID>X("VimVar", s:foreground, "", "")
     call <SID>X("VimFuncVar", s:purple, "", "")
-    call <SID>X("VimOption", "a0a0a0", "", "")
-
-	" Vim Highlighting
+    call <SID>X("VimOption", s:grey1, "", "")
 	call <SID>X("vimCommand", s:steel, "", "none")
+
 
 	" C/C++ Highlighting
 

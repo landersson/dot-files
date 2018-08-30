@@ -67,7 +67,14 @@ set textwidth=0
 set nofoldenable
 
 " builtin terminal ansi colors
-set termguicolors
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+"set termguicolors
 let g:terminal_ansi_colors = [
             \ "#000000", "#a82838", "#108020", "#a07010", "#4060e0", "#a050b0", "#109090", "#707070",
             \ "#909090", "#b84050", "#309040", "#c09010", "#5080f0", "#c070d0", "#30c0c0", "#c0c0c0"]
