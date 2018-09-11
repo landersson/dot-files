@@ -1,8 +1,5 @@
 # laan's bashrc.
 
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything:
 #[ -z "$PS1" ] && return
 
@@ -43,7 +40,6 @@ fi
 
 # some more ls aliases
 alias ll='ls -l'
-alias cvstat="cvs status | grep Status:"
 alias la='ls -A'
 alias l="less"
 alias ssh="ssh -X"
@@ -61,23 +57,9 @@ alias gco='git commit'
 alias gad='git add'
 alias glg='git log'
 alias gps='git push'
-alias gpu='git pull'
+alias gpl='git pull'
 alias gdf='git diff'
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-xterm-color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    ;;
-esac
 
 # Comment in the above and uncomment this below for a color prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -106,13 +88,9 @@ if [[ `uname` == Darwin ]]; then
     fi
     export PS1="\W:>"
 fi
-#export LD_LIBRARY_PATH=""
-export PATH=:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin/:$HOME/.local/bin
-
 
 if [ -e $HOME/.bashrc.local ]; then
     source $HOME/.bashrc.local 
 fi
 
-export PP=/etc/puppetlabs/code/environments/production/
 export WRK=/OSM/CBR/D61_RCV/work/and502/
